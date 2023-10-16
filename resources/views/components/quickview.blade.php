@@ -89,17 +89,17 @@
                                     <div class="tm-prodetails-categories">
                                         <h6>Categories :</h6>
                                         <ul>
-                                            <li><a href="shop.html">Cosmetics</a></li>
-                                            <li><a href="shop.html">Makeup</a></li>
+                                            <li><a href="{{route('shop')}}">Cosmetics</a></li>
+                                            <li><a href="{{route('shop')}}">Makeup</a></li>
                                         </ul>
                                     </div>
 
                                     <div class="tm-prodetails-tags">
                                         <h6>Tags :</h6>
                                         <ul>
-                                            <li><a href="shop.html">Brush</a></li>
-                                            <li><a href="shop.html">Face</a></li>
-                                            <li><a href="shop.html">Makeup</a></li>
+                                            <li><a href="{{route('shop')}}">Brush</a></li>
+                                            <li><a href="{{route('shop')}}">Face</a></li>
+                                            <li><a href="{{route('shop')}}">Makeup</a></li>
                                         </ul>
                                     </div>
 

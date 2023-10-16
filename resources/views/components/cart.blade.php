@@ -19,8 +19,8 @@ aria-labelledby="offcanvasCartLabel">
             <h5>Total</h5><span>$73.00</span>
           </div>
     <div class="mt-3 d-flex justify-content-around">
-        <a href="#" class="tm-button">View Cart</a>
-        <a href="#" class="tm-btn-reverse">Checkout</a>
+        <a href="{{route('cart')}}" class="tm-button">View Cart</a>
+        <a href="{{route('checkout')}}" class="tm-btn-reverse">Checkout</a>
     </div>
 </div>
 </div>

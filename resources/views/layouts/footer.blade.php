@@ -11,7 +11,7 @@
 
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-widget widget-info">
-                        <a class="widget-info-logo" href="index.html"><img src="{{asset('frontend/assets/images/logo.png')}}"
+                        <a class="widget-info-logo" href="{{url('/')}}"><img src="{{asset('frontend/assets/images/logo.png')}}"
                                 alt="white logo"></a>
                         <p>Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod tempor
                             inci-didunt. It is a long established fact that a reader distracted.</p>

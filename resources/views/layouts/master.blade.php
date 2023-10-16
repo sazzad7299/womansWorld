@@ -48,10 +48,10 @@
 <div id="wrapper" class="wrapper">
 
     @include('layouts.header')
-    <x-breadcrumb></x-breadcrumb>
-@if (!request()->url('/'))
 
-@endif
+    @if (request()->url() != "http://singlevendor.test")
+    <x-breadcrumb></x-breadcrumb>
+    @endif
 
 
     @yield('frontend-content')
@@ -77,7 +77,7 @@
     <!-- inject:js -->
     <!-- <script src="assets/js/vendors/modernizr-3.7.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('frontend/assets/js/vendors/jquery.meanmenu.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/js/vendors/slick.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/js/vendors/jquery.event.move.js')}}"></script>
@@ -90,8 +90,8 @@
     <script src="{{ asset('frontend/assets/js/vendors/jquery.nstslider.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/js/vendors/scrollspy.min.js')}}"></script>
     <script src="{{ asset('frontend/assets/js/vendors/ScrollMagic.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
+    @stack('js')
     <!-- endinject -->
 </body>
 

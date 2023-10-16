@@ -92,8 +92,10 @@
                     <div class="overlay"></div>
                 </div>
                 <div class="middle">
-                    <h5>W.W Profetional</h5>
-                    <a href="#" class="tm-readmore tm-readmore-dark">Buy Now</a>
+                    <div class="content">
+                        <h5>W.W Profetional</h5>
+                    <a href="{{route('shop')}}" class="tm-readmore tm-readmore-dark">Buy Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,8 +106,10 @@
                     <div class="overlay"></div>
                 </div>
                 <div class="middle">
-                    <h5>W.W Cosmetics</h5>
-                    <a href="#" class="tm-readmore tm-readmore-dark">Buy Now</a>
+                    <div class="content">
+                        <h5>W.W Cosmetics</h5>
+                    <a href="{{route('shop')}}" class="tm-readmore tm-readmore-dark">Buy Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,8 +120,10 @@
                     <div class="overlay"></div>
                 </div>
                 <div class="middle">
-                    <h5>Kona Cosmetics</h5>
-                    <a href="#" class="tm-readmore tm-readmore-dark">Buy Now</a>
+                    <div class="content">
+                        <h5>Kona Cosmetics</h5>
+                        <a href="{{route('shop')}}" class="tm-readmore tm-readmore-dark">Buy Now</a>
+                    </div>
                 </div>
             </div>
         </div>

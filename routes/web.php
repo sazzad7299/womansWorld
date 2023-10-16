@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Frontend\ProductController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Frontend\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,7 +12,28 @@ Route::get('/', function () {
 Route::get('service', function () {
     return view('frontend.pages.service');
 })->name('service');
-
+Route::get('contact', function () {
+    return view('frontend.pages.contact');
+})->name('contact');
+Route::get('cart', function () {
+    return view('frontend.pages.cart');
+})->name('cart');
+Route::get('wishlist', function () {
+    return view('frontend.pages.wishlist');
+})->name('wishlist');
+Route::get('checkout', function () {
+    return view('frontend.pages.checkout');
+})->name('checkout');
+Route::get('my-account', function () {
+    return view('frontend.pages.my-account');
+})->name('my-account');
+Route::get('login-register', function () {
+    return view('frontend.pages.login-register');
+})->name('login-register');
+Route::get('shop', function () {
+    $products = Product::all();
+    return view('frontend.pages.shop',compact('products'));
+})->name('shop');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::view('profile', 'backend.profile')->name('profile');
