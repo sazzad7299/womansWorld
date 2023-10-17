@@ -1,0 +1,61 @@
+/**
+ * About
+ */
+
+.tm-about {
+    &-area{
+        background-size: contain;
+        background-position: left top;    
+    }
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    padding: 100px 70px;
+    background-color: #ffffff;
+    background-size: contain;
+    background-position: center right;
+    position: relative;
+
+    &:before{
+        content:"";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(#ffffff, 0.87);
+        display: none;
+    }
+
+    h3 {
+        margin-top: -10px;
+    }
+
+    .tm-button {
+        margin-top: 15px;
+    }
+
+    @media #{$layout-notebook}{
+        padding: 60px 40px;
+    }
+
+    @media #{$layout-tablet}{
+        padding: 60px 40px;
+
+        &::before{
+            display: block;
+        }
+    }
+
+    @media #{$layout-mobile-lg}{
+        padding: 60px 40px;
+
+        &::before{
+            display: block;
+        }
+    }
+
+    @media #{$layout-mobile-sm}{
+        padding: 45px 30px;
+        background-size: cover;
+    }
+}

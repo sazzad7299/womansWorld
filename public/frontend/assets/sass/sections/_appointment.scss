@@ -1,0 +1,64 @@
+/**
+ * Appointment
+ */
+
+.tm-appointment{
+
+    &-box{
+        h3{
+            margin-top: -8px;
+        }
+    }
+    &-image{
+        margin-right: 85px;
+        margin-left: -150px;
+        margin-bottom: -100px;
+    }
+
+    @media #{$layout-laptop}{
+        &-image{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    @media only screen and (min-width: 1401px) and (max-width: 1599px){
+        &-image{
+            margin-left: -95px;
+        }
+    }
+
+    @media #{$layout-notebook}{
+        &-image{
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    @media #{$layout-tablet}{
+        &-image{
+            text-align: center;
+            max-width: 60%;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: -80px;
+        }
+    }
+
+    @media #{$layout-mobile-lg}{
+        &-image{
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: -70px;
+        }
+    }
+
+    @media #{$layout-mobile-sm}{
+        &-image{
+            max-width: 100%;
+        }
+    }
+}

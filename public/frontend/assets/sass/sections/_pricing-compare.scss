@@ -1,0 +1,84 @@
+/**
+ * Pricing & Compare
+ */
+
+.tm-pricing {
+    margin-right: 20px;
+    overflow: hidden;
+
+    h3{
+        margin-top: -8px;
+    }
+
+    ul {
+        padding-left: 0;
+        margin-bottom: 0;
+
+
+        li {
+            list-style: none;
+            position: relative;
+            @include clearfix();
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            .name {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: calc(100% + 18px);
+                    height: 1px;
+                    width: 600px;
+                    background: $color-border;
+                    top: 12px;
+                }
+            }
+
+            .price {
+                float: right;
+                padding-left: 20px;
+                background: $color-grey;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+
+    .tm-button {
+        margin-top: 30px;
+    }
+
+    @media #{$layout-notebook}{
+        margin-right: 0;
+    }
+
+    @media #{$layout-tablet}{
+        margin-right: 0;
+    }
+
+    @media #{$layout-mobile-lg}{
+        margin-right: 0;
+    }
+}
+
+.tm-beforeafter{
+    h3{
+        margin-top: -8px;
+    }
+}
+
+@media #{$layout-tablet}{
+    .tm-beforeafter{
+        margin-top: 40px;
+    }
+}
+
+@media #{$layout-mobile-lg}{
+    .tm-beforeafter{
+        margin-top: 40px;
+    }
+}

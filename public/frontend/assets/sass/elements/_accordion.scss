@@ -1,0 +1,84 @@
+/**
+ * Accordion
+ */
+
+ .tm-accordion {
+
+    .card {
+        border: none;
+        background: transparent;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .card-header {
+        padding: 0;
+        background: transparent;
+        border: 0;
+
+        button {
+            height: auto;
+            display: block;
+            width: 100%;
+            text-align: left;
+            line-height: 28px;
+            text-decoration: none !important;
+            border: 0;
+            position: relative;
+            white-space: inherit;
+            color: $color-heading;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: $ff-heading;
+            border-bottom: 1px solid $color-border;
+            padding: 8px 0;
+            padding-left: 45px;
+
+            &::after {
+                content: "\e65f";
+                font-family: 'themify';
+                position: absolute;
+                left: 0;
+                top: 7px;
+                font-size: 18px;
+            }
+
+            &.collapsed {
+                &::after {
+                    content: "\e65f";
+                }
+            }
+
+            &:not(.collapsed) {
+                color: $color-theme;
+
+                &:after {
+                    content: "\e65c";
+                }
+            }
+        }
+    }
+
+    .card-body {
+        padding: 30px 0 30px 45px;
+        border-radius: 3px;
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    @media #{$layout-mobile-lg}{
+        .card-header{
+            button{
+                font-size: 16px;
+                padding-left: 30px;
+            }
+        }
+        .card-body {
+            padding-left: 30px;
+        }
+    }
+}

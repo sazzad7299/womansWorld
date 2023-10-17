@@ -1,0 +1,53 @@
+/**
+ * Service
+ */
+
+.tm-service {
+
+    &-wrapper {
+        border-left: 1px solid $color-border;
+        border-top: 1px solid $color-border;
+
+        [class^="col"] {
+            border-right: 1px solid $color-border;
+            border-bottom: 1px solid $color-border;
+        }
+    }
+
+    padding: 40px 15px 50px 15px;
+
+    .tm-readmore {
+        margin-top: 10px;
+    }
+
+    &-icon {
+        font-size: 100px;
+        color: $color-heading;
+        margin-bottom: 20px;
+        display: inline-block;
+        transition: $transition;
+
+        i {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &:hover &-icon {
+        color: $color-theme;
+    }
+
+    @media #{$layout-tablet} {
+        &-icon {
+            font-size: 80px;
+        }
+    }
+
+    @media #{$layout-mobile-lg} {
+        padding: 30px 15px 40px 15px;
+
+        &-icon {
+            font-size: 80px;
+        }
+    }
+}

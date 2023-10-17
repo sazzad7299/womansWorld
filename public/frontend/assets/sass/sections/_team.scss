@@ -1,0 +1,66 @@
+/**
+ * Team Member
+ */
+
+.tm-member {
+    &-topside {
+        position: relative;
+        overflow: hidden;
+
+        ul {
+            padding-left: 0;
+            margin-bottom: 0;
+            position: absolute;
+            left: 0;
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            background: rgba($color-theme, 0.8);
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0;
+            transition: $transition;
+            transform: translateY(100%);
+
+            li {
+                list-style: none;
+                display: inline-block;
+                font-size: 18px;
+                vertical-align: middle;
+
+                &:not(:last-child) {
+                    border-right: 1px solid rgba(#ffffff, 0.4);
+                }
+
+                a,
+                button {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 8px 20px;
+                    color: #ffffff;
+                    outline: none;
+                    border: none;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    &-bottomside {
+        margin-top: 25px;
+
+        h6 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover &-topside {
+        ul {
+            transform: translateY(0);
+        }
+    }
+}

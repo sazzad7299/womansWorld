@@ -1,0 +1,117 @@
+/*
+ * %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ *
+ * Template Name: Munu - Beauty HTML5 Template   
+ * Template URI: https://thememarch.com/demo/html/munu/
+ * Description: Munu is a fully responsive beauty HTML template which comes with the unique and clean design. It built with latest bootstrap 4 framework which makes the template fully customizable. It has also e-commerce support. E-commerce pages are included on this template.
+ * Author: Thememarch
+ * Author URI: https://thememarch.com
+ * Version: 1.2
+ *
+ * %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ */
+
+
+/*
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+    TABLE OF CONTENTS
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+    01. Reset 
+    02. Animations 
+    03. Typography 
+    04. Utilities 
+    
+    05. Button
+    06. Title
+    07. Feature
+    08. Form
+    09. Selectbox
+    10. Tabgroup
+    11. Accordion
+    12. Pagination
+
+    13. Header
+    14. Navigation
+    15. Heroslider
+    16. About
+    17. Video Area
+    18. Service
+    19. Pricing & Compare
+    20. Appointment
+    21. Product
+    22. Offer
+    23. Testimonial
+    24. Subscribe
+    25. Team Member
+    26. Portfolio
+    27. Call to action
+    28. Blog
+    29. Contact
+    30. Brand Logo
+    31. Instagram
+    32. Shop
+    33. Breadcrumb
+    34. Widgets
+    35. Comment
+    36. Footer
+
+    37. Product Details
+    38. Shopping Cart
+    39. Checkout
+    40. My Account
+
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+    END TABLE OF CONTENTS
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+*/
+
+
+
+@import 'variables';
+@import 'mixins';
+
+@import 'basic/reset';
+@import 'basic/animations';
+@import 'basic/typography';
+@import 'basic/utilities';
+
+@import 'elements/button';
+@import 'elements/titles';
+@import 'elements/feature';
+@import 'elements/form';
+@import 'elements/selectbox';
+@import 'elements/tab';
+@import 'elements/accordion';
+@import 'elements/pagination';
+
+@import 'sections/header';
+@import 'sections/nav';
+@import 'sections/heroslider';
+@import 'sections/about';
+@import 'sections/video';
+@import 'sections/service';
+@import 'sections/pricing-compare';
+@import 'sections/appointment';
+@import 'sections/product';
+@import 'sections/offer';
+@import 'sections/testimonial';
+@import 'sections/subscribe';
+@import 'sections/team';
+@import 'sections/portfolio';
+@import 'sections/calltoaction';
+@import 'sections/blog';
+@import 'sections/contact';
+@import 'sections/brandlogo';
+@import 'sections/instagram';
+@import 'sections/shop';
+@import 'sections/breadcrumb';
+@import 'sections/widgets';
+@import 'sections/comment';
+@import 'sections/footer';
+
+
+@import 'pages/product-details';
+@import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/account';
