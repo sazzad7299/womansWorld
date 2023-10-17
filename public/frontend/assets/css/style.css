@@ -3775,6 +3775,9 @@ button.tm-videobutton:hover {
 /**
  * Product
  */
+ .tm-product{
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+ }
 .tm-product-topside {
     position: relative;
     overflow: hidden;
@@ -3788,26 +3791,42 @@ button.tm-videobutton:hover {
     padding-left: 0;
     margin-bottom: 0;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 0;
-    width: 100%;
+    top: 15px;
+    right: 15px;
     background: transparent;
     padding: 10px 20px;
     text-align: center;
     font-size: 0;
     z-index: 1;
 }
-
-.tm-product-actions::before {
+.tm-product-addToCart {
+    padding-left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0;
+    z-index: 1;
+    color: #ffffff;
+}
+.tm-product-addToCart li{
+    visibility: hidden;
+    opacity: 0;
+}
+/* .tm-product-actions::before {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
-    top: 0;
-    background: rgba(255, 108, 141, 0.8);
+    right: 0;
+    bottom: 0;
+    background: rgb(205 193 193 / 53%);
+    backdrop-filter: blur(4px);
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
@@ -3815,38 +3834,51 @@ button.tm-videobutton:hover {
     -ms-transform: translateY(100%);
     transform: translateY(100%);
     z-index: -1;
+} */
+.tm-product-actions li button{
+    border: none!important;
+    color: #ffffff;
 }
-
-.tm-product-actions li {
+.tm-product-actions li,.tm-product-addToCart li {
     list-style: none;
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 18px;
     vertical-align: middle;
     visibility: hidden;
     opacity: 0;
-    -webkit-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
-    -webkit-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transition: .5s;
+    transition: .5s;
+    margin:5px 0px;
 }
 
-.tm-product-actions li:not(:last-child) {
+/* .tm-product-actions li:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.4);
-}
+} */
 
-.tm-product-actions li a,
-.tm-product-actions li button {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 8px 20px;
+.tm-product-actions li {
+    line-height: 3rem;
     color: #ffffff;
-    outline: none;
-    border: none;
-    height: auto;
-}
+    background-color: rgb(245 245 245 / 20%);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.18);
+    box-shadow: 0 1px 4px rgba(0,0,0,.18);
 
+}
+.tm-product .tm-ratingbox{
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.tm-product-actions li:hover{
+    color:#f26460;
+}
 .tm-product-bottomside {
     padding-top: 25px;
 }
@@ -3870,14 +3902,20 @@ button.tm-videobutton:hover {
 .tm-product-price del {
     margin-right: 10px;
 }
-
+.tm-product-topside img{
+    transition: 1s;
+    max-height: 340px;
+}
+.tm-product:hover .tm-product-topside img{
+    transform: scale(1.2);
+}
 .tm-product:hover .tm-product-actions::before {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
 }
 
-.tm-product:hover .tm-product-actions li {
+.tm-product:hover .tm-product-actions li,.tm-product:hover .tm-product-addToCart li,.tm-product:hover .tm-ratingbox {
     visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -5084,13 +5122,14 @@ button.tm-videobutton:hover {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-top: -15px;
+    background-color: #fdf4f3;
+    padding: 0px 20px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.1);
 }
 
 .tm-shop-header .nice-select {
     width: auto;
     min-width: 200px;
-    margin-top: 15px;
 }
 
 .tm-shop-header .nice-select .list {
@@ -5103,7 +5142,6 @@ button.tm-videobutton:hover {
     -webkit-flex-grow: 100;
     -ms-flex-positive: 100;
     flex-grow: 100;
-    margin-top: 15px;
 }
 
 /**
