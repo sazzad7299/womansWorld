@@ -31,15 +31,19 @@
                                     <ul class="tm-product-actions">
                                         <li><button data-fancybox data-src="#tm-product-quickview"><i
                                                     class="ti ti-eye"></i></button></li>
-                                        <li><a href="#"><i class="ti ti-shopping-cart"></i></a></li>
+                                        {{-- <li><a href="#"><i class="ti ti-shopping-cart"></i></a></li> --}}
                                         <li><a href="#"><i class="ti ti-heart"></i></a></li>
+
+                                    </ul>
+                                    <ul class="tm-product-addToCart">
+                                        <li><a href="{{route('cart')}}" class="widget-pricefilter-button">Add to Cart <i class="ti ti-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="tm-product-bottomside">
+                                <div class="tm-product-bottomside text-center">
                                     <h6 class="tm-product-title"><a href="product-details.html">Cosmetic
                                             plastic compact
                                             powder</a></h6>
-                                    <span class="tm-product-price"><del>Tk 109.50</del> Tk 99.99</span>
+                                    <span class="tm-product-price"><del><span class="currency_symbol">৳</span> 109.50</del> <span class="currency_symbol">৳</span> 99.99</span>
                                     <div class="tm-ratingbox">
                                         <span class="is-active"><i class="ti ti-star"></i></span>
                                         <span class="is-active"><i class="ti ti-star"></i></span>
