@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tm-about tm-scrollanim" data-bgimage="{{ asset('frontend/assets/images/about-block-background.png')}}">
+            <div class="tm-about tm-scrollanim" data-bgimage="{{ asset('frontend/assets/images/about-block-background.jpg')}}">
                 <div class="row">
                     <div class="col-xl-7 col-lg-8">
                         <h3>Welcome to Woman's World beauty</h3>
@@ -267,8 +267,8 @@
                 <div class="col-lg-6">
                     <div class="tm-beforeafter">
                         <div class="tm-beforeafter-image">
-                            <img src="{{ asset('frontend/assets/images/beforeafter-before.jpg')}}" alt="before image">
-                            <img src="{{ asset('frontend/assets/images/beforeafter-after.jpg')}}" alt="after image">
+                            <img src="{{ asset('frontend/assets/images/services/service1.jpg')}}" alt="before image">
+                            <img src="{{ asset('frontend/assets/images/services/service2.jpg')}}" alt="after image">
                         </div>
                     </div>
                 </div>
