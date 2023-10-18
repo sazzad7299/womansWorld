@@ -70,7 +70,7 @@
                                 </ul>
                             </li>
                             <li class="tm-header-nav-dropdown"><a href="{{ route('shop') }}">W.W
-                                    Profetional</a>
+                                    Professional</a>
                                 <ul>
                                     <li><a href="{{ route('shop') }}">Hare Care</a></li>
                                     <li><a href="{{ route('shop') }}">Skin Care</a></li>
