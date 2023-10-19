@@ -6,7 +6,7 @@
     <div class="tm-heroslider-slider">
 
         <!-- Heroslider Item -->
-        <div class="tm-heroslider" data-bgimage="{{asset('frontend/assets/images/hero-slider-4.jpg')}}">
+        <div class="tm-heroslider" data-bgimage="{{asset('frontend/assets/images/slider1.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -15,7 +15,7 @@
                                 <h1>A thing of beauty is a joy forever for women</h1>
                                 <p>The experience of beauty often involves an interpretation of some
                                     entity as being in balance.</p>
-                                <a href="#" class="tm-button">Read more</a>
+                                    <a href="{{route('shop')}}" class="tm-button">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
         <!--// Heroslider Item -->
 
         <!-- Heroslider Item -->
-        <div class="tm-heroslider" data-bgimage="{{ asset('frontend/assets/images/hero-slider-2.jpg')}}">
+        <div class="tm-heroslider text-white" data-bgimage="{{ asset('frontend/assets/images/slider2.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -34,7 +34,7 @@
                                 <h1>Beauty have changed greatly over the years</h1>
                                 <p>The experience of beauty often involves an interpretation of some
                                     entity as being in balance.</p>
-                                <a href="#" class="tm-button">Buy Now</a>
+                                <a href="{{route('shop')}}" class="tm-button">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
         <!--// Heroslider Item -->
 
         <!-- Heroslider Item -->
-        <div class="tm-heroslider" data-bgimage="{{('frontend/assets/images/hero-slider-3.jpg')}}">
+        <div class="tm-heroslider text-white" data-bgimage="{{('frontend/assets/images/slider3.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -53,7 +53,7 @@
                                 <h1>Beauty is first and foremost an emotion</h1>
                                 <p>The experience of beauty often involves an interpretation of some
                                     entity as being in balance.</p>
-                                <a href="#" class="tm-button">Read more</a>
+                                    <a href="{{route('shop')}}" class="tm-button">Buy Now</a>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
 <!-- Page Content -->
 <main class="page-content">
    <!-- Brand Area -->
-   <section id="tm-brand-area" class="container-fluid tm-section tm-brand-area tm-padding-section">
+   <section id="tm-brand-area" class="container tm-section tm-brand-area tm-padding-section">
      <div class="row">
 
         <div class="col-lg-4 col-md-6 col-12">
