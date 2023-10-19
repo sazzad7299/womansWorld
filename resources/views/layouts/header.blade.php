@@ -94,11 +94,11 @@
                                     <li><a href="{{ route('shop') }}">Collection</a></li>
                                 </ul>
                             </li>
-                            <li class="tm-header-nav-dropdown"><a href="blog.html">Treand</a>
+                            <li class="tm-header-nav-dropdown"><a href="{{route('blog')}}">Treand</a>
                                 <ul>
-                                    <li><a href="blog.html">Tip of the week</a></li>
-                                    <li><a href="blog-leftsidebar.html">Look</a></li>
-                                    <li><a href="blog-details.html">Farnaz Alam's</a></li>
+                                    <li><a href="{{route('blog')}}">Tip of the week</a></li>
+                                    <li><a href="{{route('blog')}}">Look</a></li>
+                                    <li><a href="{{route('blog')}}">Farnaz Alam's</a></li>
                                 </ul>
                             </li>
 

@@ -40,7 +40,7 @@
                                     </ul>
                                 </div>
                                 <div class="tm-product-bottomside text-center">
-                                    <h6 class="tm-product-title"><a href="product-details.html">Cosmetic
+                                    <h6 class="tm-product-title"><a href="{{route("product-details")}}">Cosmetic
                                             plastic compact
                                             powder</a></h6>
                                     <span class="tm-product-price"><del><span class="currency_symbol">৳</span> 109.50</del> <span class="currency_symbol">৳</span> 99.99</span>

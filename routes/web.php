@@ -12,6 +12,9 @@ Route::get('/', function () {
 Route::get('service', function () {
     return view('frontend.pages.service');
 })->name('service');
+Route::get('blog', function () {
+    return view('frontend.pages.blog');
+})->name('blog');
 Route::get('contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
@@ -34,6 +37,10 @@ Route::get('shop', function () {
     $products = Product::all();
     return view('frontend.pages.shop',compact('products'));
 })->name('shop');
+Route::get('product-details', function () {
+    $products = Product::all();
+    return view('frontend.pages.product-details',compact('products'));
+})->name('product-details');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::view('profile', 'backend.profile')->name('profile');
