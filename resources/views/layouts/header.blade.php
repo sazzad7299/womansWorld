@@ -94,7 +94,7 @@
                                     <li><a href="{{ route('shop') }}">Collection</a></li>
                                 </ul>
                             </li>
-                            <li class="tm-header-nav-dropdown"><a href="{{route('blog')}}">Treand</a>
+                            <li class="tm-header-nav-dropdown"><a href="{{route('blog')}}">Trend</a>
                                 <ul>
                                     <li><a href="{{route('blog')}}">Tip of the week</a></li>
                                     <li><a href="{{route('blog')}}">Look</a></li>
@@ -102,7 +102,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                            {{-- <li><a href="{{ route('contact') }}">Contact Us</a></li> --}}
                         </ul>
 
                     </nav>
