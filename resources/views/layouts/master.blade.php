@@ -7,8 +7,8 @@
     <title>Woman's World - Beauty Reigns, We Beautity</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" href="{{ asset('frontend/assets/images/favicon.png')}}">
-    <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.ico')}}">
+    <link rel="apple-touch-icon" href="{{ asset('frontend/assets/images/section-divider-icon.png')}}">
+    <link rel="shortcut icon" href="{{ asset('frontend/assets/images/section-divider-icon.png')}}">
 
     <!-- CSS FILES HERE -->
     <!-- inject:css -->

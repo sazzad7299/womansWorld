@@ -7,7 +7,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\ProductController;
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = Product::take(4)->get();
+    return view('welcome',compact('products'));
 });
 Route::get('service', function () {
     return view('frontend.pages.service');

@@ -6039,6 +6039,7 @@ button.tm-videobutton:hover {
 .widgets-footer .single-widget {
     margin-top: 50px;
     padding: 0;
+    list-style: none;
 }
 
 .widgets-footer .single-widget .widget-title {

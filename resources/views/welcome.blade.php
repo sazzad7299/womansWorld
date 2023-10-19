@@ -156,7 +156,7 @@
                             suffered alteration in some form by injected humour or randomised words which don't
                             look even slightly believable. If you are going to use a passage of Lorem Ipsum, you
                             need to be sure there isn't anything embarrassing.</p>
-                        <a href="#" class="tm-button">Read more</a>
+                        {{-- <a href="#" class="tm-button">Read more</a> --}}
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@
                         <h5>Make up</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
                             ultrices utquis blandit dolor.</p>
-                        <a href="#" class="tm-readmore tm-readmore-dark">Read more</a>
+                        <a href="#" class="tm-readmore tm-readmore-dark">Explore more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
@@ -199,7 +199,7 @@
                         <h5>Facial mask</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
                             ultrices utquis blandit dolor.</p>
-                        <a href="#" class="tm-readmore tm-readmore-dark">Read more</a>
+                        <a href="#" class="tm-readmore tm-readmore-dark">Explore more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
@@ -210,7 +210,7 @@
                         <h5>Skin care</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
                             ultrices utquis blandit dolor.</p>
-                        <a href="#" class="tm-readmore tm-readmore-dark">Read more</a>
+                        <a href="#" class="tm-readmore tm-readmore-dark">Explore more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
@@ -221,7 +221,7 @@
                         <h5>Liner</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
                             ultrices utquis blandit dolor.</p>
-                        <a href="#" class="tm-readmore tm-readmore-dark">Read more</a>
+                        <a href="#" class="tm-readmore tm-readmore-dark">Explore more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
@@ -232,7 +232,7 @@
                         <h5>Special event make up</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
                             ultrices utquis blandit dolor.</p>
-                        <a href="#" class="tm-readmore tm-readmore-dark">Read more</a>
+                        <a href="#" class="tm-readmore tm-readmore-dark">Explore more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
@@ -240,10 +240,10 @@
                         <span class="tm-service-icon">
                             <i class="flaticon-rent"></i>
                         </span>
-                        <h5>Home service</h5>
+                        <h5>Asthetic Clinic</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
                             ultrices utquis blandit dolor.</p>
-                        <a href="#" class="tm-readmore tm-readmore-dark">Read more</a>
+                        <a href="#" class="tm-readmore tm-readmore-dark">Explore more</a>
                     </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@
     <!-- Offer Area -->
     <div class="tm-section tm-offer-area tm-padding-section bg-grey">
         <div class="container">
-            <div class="row align-items-center">
+            {{-- <div class="row align-items-center">
                 <div class="col-lg-6 col-12 order-2 order-lg-1">
                     <div class="tm-offer-left tm-scrollanim">
                         <h1>Deal of the Month</h1>
@@ -271,6 +271,51 @@
                             <img src="{{ asset('frontend/assets/images/services/service2.jpg')}}" alt="after image">
                         </div>
                     </div>
+                </div>
+            </div> --}}
+            <div class="tm-offer-left tm-scrollanim text-center">
+                <h2>Kona By Farnaz Alam</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+            </div>
+            17,31,48
+            <div class="tm-shop-products">
+                <div class="row mt-30-reverse">
+                    <!-- Single Product -->
+                    @foreach ($products as $product)
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-12 mt-30">
+                        <div class="tm-product tm-scrollanim">
+                            <div class="tm-product-topside">
+                                <img src="{{ asset($product->display)}}"
+                                    alt="product image">
+                                <ul class="tm-product-actions">
+                                    <li><button data-fancybox data-src="#tm-product-quickview"><i
+                                                class="ti ti-eye"></i></button></li>
+                                    {{-- <li><a href="#"><i class="ti ti-shopping-cart"></i></a></li> --}}
+                                    <li><a href="#"><i class="ti ti-heart"></i></a></li>
+
+                                </ul>
+                                <ul class="tm-product-addToCart">
+                                    <li><a href="{{route('cart')}}" class="widget-pricefilter-button">Add to Cart <i class="ti ti-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tm-product-bottomside text-center">
+                                <h6 class="tm-product-title"><a href="{{route("product-details")}}">Cosmetic
+                                        plastic compact
+                                        powder</a></h6>
+                                <span class="tm-product-price"><del><span class="currency_symbol">৳</span> 109.50</del> <span class="currency_symbol">৳</span> 99.99</span>
+                                <div class="tm-ratingbox">
+                                    <span class="is-active"><i class="ti ti-star"></i></span>
+                                    <span class="is-active"><i class="ti ti-star"></i></span>
+                                    <span class="is-active"><i class="ti ti-star"></i></span>
+                                    <span class="is-active"><i class="ti ti-star"></i></span>
+                                    <span><i class="ti ti-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!--// Single Product -->
+
                 </div>
             </div>
         </div>
@@ -349,7 +394,7 @@
     <!--// Testimonial Area -->
 
     <!-- Subscribe Area -->
-    <div class="tm-section tm-subscribe-area tm-padding-section bg-grey"
+    {{-- <div class="tm-section tm-subscribe-area tm-padding-section bg-grey"
         data-bgimage="{{ asset('frontend/assets/images/subscribe-bg-image.png')}}">
         <div class="container">
             <div class="row justify-content-center">
@@ -376,7 +421,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--// Subscribe Area -->
 
 </main>
