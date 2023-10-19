@@ -277,7 +277,6 @@
                 <h2>Kona By Farnaz Alam</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
             </div>
-            17,31,48
             <div class="tm-shop-products">
                 <div class="row mt-30-reverse">
                     <!-- Single Product -->
