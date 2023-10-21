@@ -16,7 +16,7 @@
                         <li><a data-bs-toggle="offcanvas" href="#offcanvasCart" role="button"
                                 aria-controls="offcanvasCart"><i class="ti ti-shopping-cart"></i></a></li>
                         <li><a href="{{ route('wishlist') }}"><i class="ti ti-heart"></i></a></li>
-                        <li><a href="{{ route('login-register') }}"><i class="ti ti-user"></i></a></li>
+                        <li><a href="{{ route('user-login') }}"><i class="ti ti-user"></i></a></li>
                         <li><button class="tm-header-searchtrigger"><i class="ti ti-search"></i></button></li>
                     </ul>
                 </div>
@@ -112,7 +112,7 @@
                             <li><a data-bs-toggle="offcanvas" href="#offcanvasCart" role="button"
                                     aria-controls="offcanvasCart"><i class="ti ti-shopping-cart"></i></a></li>
                             <li><a href="{{ route('wishlist') }}"><i class="ti ti-heart"></i></a></li>
-                            <li><a href="{{ route('login-register') }}"><i class="ti ti-user"></i></a></li>
+                            <li><a href="{{ route('user-login') }}"><i class="ti ti-user"></i></a></li>
                             <li><button class="tm-header-searchtrigger"><i class="ti ti-search"></i></button>
                             </li>
                         </ul>

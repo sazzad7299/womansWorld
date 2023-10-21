@@ -3868,14 +3868,6 @@ button.tm-videobutton:hover {
     box-shadow: 0 1px 4px rgba(0,0,0,.18);
 
 }
-.tm-product .tm-ratingbox{
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transform: scale(.5);
-    transform: scale(.5);
-    -webkit-transition: .5s;
-    transition: .5s;
-}
 .tm-product-actions li:hover{
     color:#f26460;
 }
@@ -3915,7 +3907,7 @@ button.tm-videobutton:hover {
     transform: translateY(0);
 }
 
-.tm-product:hover .tm-product-actions li,.tm-product:hover .tm-product-addToCart li,.tm-product:hover .tm-ratingbox {
+.tm-product:hover .tm-product-actions li,.tm-product:hover .tm-product-addToCart li,.tm-product:hover {
     visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
