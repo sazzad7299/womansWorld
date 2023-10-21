@@ -26,7 +26,7 @@
                         aria-selected="false">Account Details</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="account-logout-tab" href="{{route('login-register')}}" role="tab"
+                    <a class="nav-link" id="account-logout-tab" href="{{route('logout')}}" role="tab"
                         aria-controls="account-address" aria-selected="false">Logout</a>
                 </li>
             </ul>

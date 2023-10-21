@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-    
+
 @endpush
 @section('frontend-content')
     <!-- Checkout Area -->
@@ -172,43 +172,10 @@
                                 <div class="tm-form-inner">
                                     <div class="tm-form-field">
                                         <input type="radio" name="checkout-payment-method"
-                                            id="checkout-payment-banktransfer">
-                                        <label for="checkout-payment-banktransfer">Direct Bank Transfer</label>
-                                        <div class="tm-checkout-payment-content">
-                                            <p>Make your payment directly into our bank account.</p>
-                                        </div>
-                                    </div>
-                                    <div class="tm-form-field">
-                                        <input type="radio" name="checkout-payment-method"
-                                            id="checkout-payment-checkpayment" checked="checked">
-                                        <label for="checkout-payment-checkpayment">Check Payments</label>
-                                        <div class="tm-checkout-payment-content">
-                                            <p>Please send a check to Store Name, Store Street, Store Town,
-                                                Store State / County, Store Postcode.</p>
-                                        </div>
-                                    </div>
-                                    <div class="tm-form-field">
-                                        <input type="radio" name="checkout-payment-method"
-                                            id="checkout-payment-cashondelivery">
+                                            id="checkout-payment-cashondelivery"  checked="checked">
                                         <label for="checkout-payment-cashondelivery">Cash On Delivery</label>
                                         <div class="tm-checkout-payment-content">
                                             <p>Pay with cash upon delivery.</p>
-                                        </div>
-                                    </div>
-                                    <div class="tm-form-field">
-                                        <input type="radio" name="checkout-payment-method"
-                                            id="checkout-payment-paypal">
-                                        <label for="checkout-payment-paypal">PayPal</label>
-                                        <div class="tm-checkout-payment-content">
-                                            <p>Pay via PayPal.</p>
-                                        </div>
-                                    </div>
-                                    <div class="tm-form-field">
-                                        <input type="radio" name="checkout-payment-method"
-                                            id="checkout-payment-creditcard">
-                                        <label for="checkout-payment-creditcard">Credit Card</label>
-                                        <div class="tm-checkout-payment-content">
-                                            <p>Pay with your credit card via Stripe.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -238,3 +205,6 @@
     </div>
     <!--// Checkout Area --
 @endsection
+@push('js')
+<script src="{{asset('frontend/assets/js/vendors/bootstrap.bundle.min.js')}}"></script>
+@endpush

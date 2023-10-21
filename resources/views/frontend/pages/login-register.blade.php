@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-    
+
 @endpush
 @section('frontend-content')
      <!-- Login Register Area -->
@@ -9,7 +9,7 @@
             <div class="row">
 
                 <div class="col-lg-6">
-                    <form action="{{route('my-account')}}" class="tm-form tm-login-form">
+                    <form action="{{route('dashboard')}}" class="tm-form tm-login-form">
                         <h4>Login</h4>
                         <div class="tm-form-inner">
                             <div class="tm-form-field">
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="{{route('my-account')}}" class="tm-form tm-register-form">
+                    <form action="{{route('dashboard')}}" class="tm-form tm-register-form">
                         <h4>Create an account</h4>
                         <div class="tm-form-inner">
                             <div class="tm-form-field">

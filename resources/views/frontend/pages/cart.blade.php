@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-    
+
 @endpush
 @section('frontend-content')
     <!-- Shopping Cart Area -->
@@ -21,54 +21,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (Cart::content() as $item)
                         <tr>
                             <td>
                                 <a href="product-details.html" class="tm-cart-productimage">
-                                    <img src="{{asset('frontend/assets/images/products/product-image-1-thumb.jpg')}}"
+                                    <img src="{{asset($item->options->image)}}"
                                         alt="product image">
                                 </a>
                             </td>
                             <td>
-                                <a href="product-details.html" class="tm-cart-productname">Cosmetic plastic
-                                    compact powder</a>
+                                <a href="" class="tm-cart-productname">{{$item->name}}</a>
                             </td>
-                            <td class="tm-cart-price">$75.00</td>
+                            <td class="tm-cart-price"><span class="currency_symbol">৳</span>{{$item->price}}</td>
                             <td>
                                 <div class="tm-quantitybox">
                                     <input type="text" value="1">
                                 </div>
                             </td>
                             <td>
-                                <span class="tm-cart-totalprice">$75.00</span>
+                                <span class="tm-cart-totalprice"><span class="currency_symbol">৳</span>{{$item->subtotal}}</span>
                             </td>
                             <td>
-                                <button class="tm-cart-removeproduct"><i class="ti ti-close"></i></button>
+                                <a href="{{ route('cart.remove', ['rowId' => $item->rowId]) }} class="tm-cart-removeproduct"><i class="ti ti-close"></i></a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <a href="product-details.html" class="tm-cart-productimage">
-                                    <img src="{{asset('frontend/assets/images/products/product-image-2-thumb.jpg')}}"
-                                        alt="product image">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="product-details.html" class="tm-cart-productname">Cosmetics and makeup
-                                    brushes</a>
-                            </td>
-                            <td class="tm-cart-price">$75.00</td>
-                            <td>
-                                <div class="tm-quantitybox">
-                                    <input type="text" value="1">
-                                </div>
-                            </td>
-                            <td>
-                                <span class="tm-cart-totalprice">$75.00</span>
-                            </td>
-                            <td>
-                                <button class="tm-cart-removeproduct"><i class="ti ti-close"></i></button>
-                            </td>
-                        </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -121,3 +99,4 @@
     </div>
     <!--// Shopping Cart Area -->
 @endsection
+

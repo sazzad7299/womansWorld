@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -23,7 +23,7 @@ class CartController extends Controller
 
     public function cart()
     {
-        return view('frontend.cart');
+        return view('frontend.pages.cart');
     }
 
     public function store(Request $request)
@@ -40,9 +40,10 @@ class CartController extends Controller
         echo Cart::count();
     }
 
-    public function delete(Request $request)
+    public function delete($rowId)
     {
-        $rowId = $request->row_id;
+        // $rowId = $request->row_id;
         Cart::remove($rowId);
+        return back();
     }
 }

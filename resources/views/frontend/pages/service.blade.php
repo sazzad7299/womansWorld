@@ -23,8 +23,7 @@
                 </div> --}}
             </div>
             <div class="col-lg-6 treatment-content">
-                <h2 class="treat-num">01.</h2>
-                <h1>V- Line Injection</h1>
+                <h2>V- Line Injection</h2>
                 <p> The procedure involves a few tiny injections into the jaw muscle with a needle as fine as a human hair. This will have its effect on the muscle over the following 3 months.</p>
                 <p>
                 <ul>
@@ -38,8 +37,7 @@
         </div>
         <div class="row body-treatment-inner mb-5">
             <div class="col-lg-6 treatment-content">
-                <h2 class="treat-num">02.</h2>
-                <h1>RF</h1>
+                <h2>RF</h2>
                 <p> The procedure involves a few tiny injections into the jaw muscle with a needle as fine as a human hair. This will have its effect on the muscle over the following 3 months.</p>
                 <p>
                 <ul>
@@ -75,8 +73,7 @@
                 </div> --}}
             </div>
             <div class="col-lg-6 treatment-content">
-                <h2 class="treat-num">03.</h2>
-                <h1>Carbon Peel</h1>
+                <h2>Carbon Peel</h2>
                 <p> Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel
                     facilisis.</p>
@@ -88,13 +85,11 @@
                     <li> Lorem ipsum dolor sit amet, consectetur.</li>
                 </ul>
                 </p>
-                <a href="{{route('shop')}}" class="tm-button"> Gele</a>
             </div>
         </div>
         <div class="row body-treatment-inner mb-5">
             <div class="col-lg-6 treatment-content">
-                <h2 class="treat-num">04.</h2>
-                <h1>Body treatment</h1>
+                <h2>Body treatment</h2>
                 <p> Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel
                     facilisis.</p>
@@ -132,8 +127,7 @@
                 </div> --}}
             </div>
             <div class="col-lg-6 treatment-content">
-                <h2 class="treat-num">05.</h2>
-                <h1>V- Line Injection</h1>
+                <h2>V- Line Injection</h2>
                 <p> The procedure involves a few tiny injections into the jaw muscle with a needle as fine as a human hair. This will have its effect on the muscle over the following 3 months.</p>
                 <p>
                 <ul>
@@ -147,8 +141,8 @@
         </div>
         <div class="row body-treatment-inner">
             <div class="col-lg-6 treatment-content">
-                <h2 class="treat-num">06.</h2>
-                <h1>Body treatment</h1>
+
+                <h2>Body treatment</h2>
                 <p> Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel
                     facilisis.</p>
@@ -173,5 +167,124 @@
     </div>
 </div>
 <!-- Body Treatment Start  -->
+<!-- Portfolio Area -->
+<div class="tm-section tm-portfolio-area tm-padding-section bg-grey">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-9 col-12">
+                <div class="tm-sectiontitle text-center">
+                    <h2>Gallery</h2>
+                    <span class="tm-sectiontitle-divider">
+                        <img src="{{ asset('frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
+                    </span>
+                    <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit
+                        inuning ut sed sittem do eiusmod.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row tm-portfolio-wrapper mt-30-reverse">
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-1.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Self makeup at home">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-1.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="https://www.youtube.com/watch?v=mHUOCxVT5ro" data-fancybox="portfolio-gallery"
+                        data-caption="Red Leapstick">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-5.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti-control-play"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-2.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Leapstick">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-2.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-3.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Face Treatment">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-3.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-4.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Clean Face">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-4.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-6.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Cleaning Face">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-6.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-7.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Art Leapstick">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-7.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+
+            <!-- Single Portfolio -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
+                <div class="tm-portfolio tm-scrollanim">
+                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-8.jpg')}}"
+                        data-fancybox="portfolio-gallery" data-caption="Skin treatment">
+                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-8.jpg')}}" alt="portfolio image">
+                    </a>
+                    <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
+                </div>
+            </div>
+            <!--// Single Portfolio -->
+        </div>
+    </div>
+
+</div>
+<!--// Portfolio Area -->
 
 @endsection
