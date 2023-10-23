@@ -14,7 +14,7 @@
                     <div class="tm-blog mt-50 tm-scrollanim">
                         <div class="tm-blog-thumb">
                             <a href="#">
-                                <img src="{{asset('frontend/assets/images/blog/blog-image-1.jpg')}}" alt="blog image">
+                                <img src="{{asset('public/frontend/assets/images/blog/blog-image-1.jpg')}}" alt="blog image">
                             </a>
                         </div>
                         <div class="tm-blog-content">
@@ -41,9 +41,9 @@
                     <div class="tm-blog mt-50 tm-scrollanim">
                         <div class="tm-blog-thumb">
                             <div class="tm-blog-imageslider">
-                                <img src="{{asset("/frontend/assets/images/blog/blog-image-2.jpg")}}" alt="blog image">
-                                <img src="{{asset("/frontend/assets/images/blog/blog-image-3.jpg")}}" alt="blog image">
-                                <img src="{{asset("/frontend/assets/images/blog/blog-image-4.jpg")}}" alt="blog image">
+                                <img src="{{asset("/public/frontend/assets/images/blog/blog-image-2.jpg")}}" alt="blog image">
+                                <img src="{{asset("/public/frontend/assets/images/blog/blog-image-3.jpg")}}" alt="blog image">
+                                <img src="{{asset("/public/frontend/assets/images/blog/blog-image-4.jpg")}}" alt="blog image">
                             </div>
                         </div>
                         <div class="tm-blog-content">
@@ -127,7 +127,7 @@
                     <div class="tm-blog mt-50 tm-scrollanim">
                         <div class="tm-blog-thumb">
                             <a href="#">
-                                <img src="{{asset('frontend/assets/images/blog/blog-image-4.jpg')}}" alt="blog image">
+                                <img src="{{asset('public/frontend/assets/images/blog/blog-image-4.jpg')}}" alt="blog image">
                             </a>
                         </div>
                         <div class="tm-blog-content">
@@ -196,7 +196,7 @@
                         <ul>
                             <li>
                                 <a href="blog-details.html" class="widget-recentpost-image">
-                                    <img src="{{asset('frontend/assets/images/blog/blog-thumbnail-1.jpg')}}" alt="blog thumbnail">
+                                    <img src="{{asset('public/frontend/assets/images/blog/blog-thumbnail-1.jpg')}}" alt="blog thumbnail">
                                 </a>
                                 <div class="widget-recentpost-content">
                                     <h6><a href="blog-details.html">Copper Pipe Corrosion</a></h6>
@@ -205,7 +205,7 @@
                             </li>
                             <li>
                                 <a href="blog-details.html" class="widget-recentpost-image">
-                                    <img src="{{asset('frontend/assets/images/blog/blog-thumbnail-2.jpg')}}" alt="blog thumbnail">
+                                    <img src="{{asset('public/frontend/assets/images/blog/blog-thumbnail-2.jpg')}}" alt="blog thumbnail">
                                 </a>
                                 <div class="widget-recentpost-content">
                                     <h6><a href="blog-details.html">Water Heater Repair</a></h6>
@@ -214,7 +214,7 @@
                             </li>
                             <li>
                                 <a href="blog-details.html" class="widget-recentpost-image">
-                                    <img src="{{asset('frontend/assets/images/blog/blog-thumbnail-3.jpg')}}" alt="blog thumbnail">
+                                    <img src="{{asset('public/frontend/assets/images/blog/blog-thumbnail-3.jpg')}}" alt="blog thumbnail">
                                 </a>
                                 <div class="widget-recentpost-content">
                                     <h6><a href="#blog-details.html">Indoor Air Quality</a></h6>

@@ -26,7 +26,7 @@ use App\Http\Controllers\WebInfoController;
 
 Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => ['admin', 'auth']], function () {
 
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'admin'])->name('dashboard');
     Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::put('contacts/update/{contact}', [ContactController::class, 'update'])->name('contacts.update');
     Route::get('orders/{id}/delivery-status/{status}', [OrderController::class, 'status'])->name('orders.status');

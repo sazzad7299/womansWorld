@@ -9,16 +9,18 @@
             <div class="row">
 
                 <div class="col-lg-6">
-                    <form action="{{route('dashboard')}}" class="tm-form tm-login-form">
+                    <form action="{{route('login')}}" class="tm-form tm-login-form" method="post">
+                        @csrf
+                        @method('POST')
                         <h4>Login</h4>
                         <div class="tm-form-inner">
                             <div class="tm-form-field">
                                 <label for="login-email">Username or email address*</label>
-                                <input type="email" id="login-email" required="required">
+                                <input type="email" id="login-email" name="email" required="required">
                             </div>
                             <div class="tm-form-field">
                                 <label for="login-password">Password*</label>
-                                <input type="password" id="login-password" required="required">
+                                <input type="password" id="login-password" name="password" required="required">
                             </div>
                             <div class="tm-form-field">
                                 <input type="checkbox" name="login-remember" id="login-remember">
@@ -35,7 +37,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="{{route('dashboard')}}" class="tm-form tm-register-form">
+                    <form action="{{route('register')}}" class="tm-form tm-register-form">
                         <h4>Create an account</h4>
                         <div class="tm-form-inner">
                             <div class="tm-form-field">

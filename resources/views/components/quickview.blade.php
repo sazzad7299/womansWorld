@@ -10,53 +10,53 @@
                                 <div class="tm-prodetails-images">
                                     <div class="tm-prodetails-largeimages">
                                         <div class="tm-prodetails-largeimage">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-1.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-1.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-largeimage">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-2.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-2.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-largeimage">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-3.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-3.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-largeimage">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-1.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-1.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-largeimage">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-2.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-2.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-largeimage">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-3.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-3.jpg')}}"
                                                 alt="product image">
                                         </div>
                                     </div>
                                     <div class="tm-prodetails-thumbnails">
                                         <div class="tm-prodetails-thumbnail">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-1-thumb.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-1-thumb.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-thumbnail">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-2-thumb.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-2-thumb.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-thumbnail">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-3-thumb.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-3-thumb.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-thumbnail">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-1-thumb.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-1-thumb.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-thumbnail">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-2-thumb.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-2-thumb.jpg')}}"
                                                 alt="product image">
                                         </div>
                                         <div class="tm-prodetails-thumbnail">
-                                            <img src="{{ asset('frontend/assets/images/products/product-image-3-thumb.jpg')}}"
+                                            <img src="{{ asset('public/frontend/assets/images/products/product-image-3-thumb.jpg')}}"
                                                 alt="product image">
                                         </div>
                                     </div>

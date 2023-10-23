@@ -206,5 +206,5 @@
     <!--// Checkout Area --
 @endsection
 @push('js')
-<script src="{{asset('frontend/assets/js/vendors/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('public/frontend/assets/js/vendors/bootstrap.bundle.min.js')}}"></script>
 @endpush

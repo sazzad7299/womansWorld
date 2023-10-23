@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/service.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/service.css') }}">
 @endpush
 @section('frontend-content')
     <!-- Wishlist Area -->
@@ -24,7 +24,7 @@
                         <tr>
                             <td>
                                 <a href="product-details.html" class="tm-wishlist-productimage">
-                                    <img src="{{asset('frontend/assets/images/products/product-image-1-thumb.jpg')}}"
+                                    <img src="{{asset('public/frontend/assets/images/products/product-image-1-thumb.jpg')}}"
                                         alt="product image">
                                 </a>
                             </td>
@@ -48,7 +48,7 @@
                         <tr>
                             <td>
                                 <a href="product-details.html" class="tm-wishlist-productimage">
-                                    <img src="{{asset('frontend/assets/images/products/product-image-2-thumb.jpg')}}"
+                                    <img src="{{asset('public/frontend/assets/images/products/product-image-2-thumb.jpg')}}"
                                         alt="product image">
                                 </a>
                             </td>
@@ -73,7 +73,7 @@
                         <tr>
                             <td>
                                 <a href="product-details.html" class="tm-wishlist-productimage">
-                                    <img src="{{asset('frontend/assets/images/products/product-image-3-thumb.jpg')}}"
+                                    <img src="{{asset('public/frontend/assets/images/products/product-image-3-thumb.jpg')}}"
                                         alt="product image">
                                 </a>
                             </td>

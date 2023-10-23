@@ -4,7 +4,7 @@
     <ul id="instafeed" class="tm-instaphotos"></ul>
     <!--// Instagram Photos -->
 
-    <div class="tm-footer-toparea" data-bgimage="{{asset('frontend/assets/images/footer-bgimage.jpg')}}"
+    <div class="tm-footer-toparea" data-bgimage="{{asset('public/frontend/assets/images/footer-bgimage.jpg')}}"
         data-white-overlay="9">
         <div class="container">
             <div class="widgets widgets-footer row">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="tm-footer-payment">
-                        <img src="{{ asset('frontend/assets/images/payment-methods.png')}}" alt="payment methods">
+                        <img src="{{ asset('public/frontend/assets/images/payment-methods.png')}}" alt="payment methods">
                     </div>
                 </div>
             </div>

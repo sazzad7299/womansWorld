@@ -2,20 +2,20 @@
     <ul class="nav">
         <li class="nav-item nav-category">{{ __('Main') }}</li>
         <li class="nav-item @if (request()->is('admin/dashboard')) {{ 'active' }} @endif">
-            <a href="{{ route('dashboard') }}" class="nav-link">
+            <a href="{{ route('admin.dashboard') }}" class="nav-link">
                 <i class="link-icon" data-feather="box"></i>
                 <span class="link-title">{{ __('Dashboard') }}</span>
             </a>
         </li>
         <li class="nav-item nav-category">{{ __('User Part') }}</li>
         <li class="nav-item @if (request()->is('admin/admins') || request()->is('admin/admins/*')) {{ 'active' }} @endif">
-            <a class="nav-link" data-toggle="collapse" href="#adminControl" role="button" aria-expanded="false"
-                aria-controls="adminControl">
+            <a class="nav-link" data-toggle="collapse" href="#adminnav" role="button" aria-expanded="false"
+                aria-controls="adminnav">
                 <i class="link-icon" data-feather="user-check"></i>
                 <span class="link-title">{{ __('Admin') }}</span>
                 <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
-            <div class="collapse @if (request()->is('admin/admins') || request()->is('admin/admins/*')) {{ 'show' }} @endif" id="adminControl">
+            <div class="collapse @if (request()->is('admin/admins') || request()->is('admin/admins/*')) {{ 'show' }} @endif" id="adminnav" >
                 <ul class="nav sub-menu">
                     <li class="nav-item">
                         <a href="{{ route('admin.admins.create') }}"
@@ -99,7 +99,7 @@
                 <span class="link-title">{{ __('Color') }}</span>
             </a>
         </li> --}}
-        <li class="nav-item nav-category">{{ __('Sell Part') }}</li>
+        <li class="nav-item nav-category">{{ __('Service Part') }}</li>
         <li class="nav-item @if (request()->is('admin/orders')) {{ 'active' }} @endif">
             <a href="{{ route('admin.orders.index') }}" class="nav-link">
                 <i class="link-icon" data-feather="codepen"></i>
@@ -166,11 +166,11 @@
                 <ul class="nav sub-menu">
                     <li class="nav-item">
                         <a href="{{ route('admin.pages.create') }}"
-                            class="nav-link @if (request()->is('admin/pages/create')) {{ 'active' }} @endif">{{ __('New Page') }}</a>
+                            class="nav-link {{ Request::is('admin/pages/create') ? 'active' : '' }}">{{ __('New Page') }}</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.pages.index') }}"
-                            class="nav-link @if (request()->is('admin/pages')) {{ 'active' }} @endif">{{ __('All Page') }}</a>
+                            class="nav-link {{ Request::is('admin/pages') ? 'active' : '' }}">{{ __('All Page') }}</a>
                     </li>
                 </ul>
             </div>

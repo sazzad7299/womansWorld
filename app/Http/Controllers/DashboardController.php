@@ -23,6 +23,6 @@ class DashboardController extends Controller
 
     public function userdashboard()
     {
-        return view('dashboard');
+        return view('frontend.pages.my-account');
     }
 }

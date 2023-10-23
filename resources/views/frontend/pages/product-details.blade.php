@@ -13,75 +13,75 @@
                             <div class="tm-prodetails-largeimages">
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/frontend/assets/images/products/product-image-1.jpg') }}"
+                                        href="{{ asset('/public/frontend/assets/images/products/product-image-1.jpg') }}"
                                         data-caption="Product Zoom Image 1">
-                                        <img src="{{ asset('/frontend/assets/images/products/product-image-1.jpg') }}"
+                                        <img src="{{ asset('/public/frontend/assets/images/products/product-image-1.jpg') }}"
                                             alt="product image">
                                     </a>
                                 </div>
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/frontend/assets/images/products/product-image-2.jpg') }}"
+                                        href="{{ asset('/public/frontend/assets/images/products/product-image-2.jpg') }}"
                                         data-caption="Product Zoom Image 2">
-                                        <img src="{{ asset('/frontend/assets/images/products/product-image-2.jpg') }}"
+                                        <img src="{{ asset('/public/frontend/assets/images/products/product-image-2.jpg') }}"
                                             alt="product image">
                                     </a>
                                 </div>
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/frontend/assets/images/products/product-image-3.jpg') }}"
+                                        href="{{ asset('/public/frontend/assets/images/products/product-image-3.jpg') }}"
                                         data-caption="Product Zoom Image 3">
-                                        <img src="{{ asset('/frontend/assets/images/products/product-image-3.jpg') }}"
+                                        <img src="{{ asset('/public/frontend/assets/images/products/product-image-3.jpg') }}"
                                             alt="product image">
                                     </a>
                                 </div>
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/frontend/assets/images/products/product-image-1.jpg') }}"
+                                        href="{{ asset('/public/frontend/assets/images/products/product-image-1.jpg') }}"
                                         data-caption="Product Zoom Image 4">
                                         <img src="assets/images/products/product-image-1.jpg" alt="product image">
                                     </a>
                                 </div>
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/frontend/assets/images/products/product-image-2.jpg') }}"
+                                        href="{{ asset('/public/frontend/assets/images/products/product-image-2.jpg') }}"
                                         data-caption="Product Zoom Image 5">
-                                        <img src="{{ asset('/frontend/assets/images/products/product-image-2.jpg') }}"
+                                        <img src="{{ asset('/public/frontend/assets/images/products/product-image-2.jpg') }}"
                                             alt="product image">
                                     </a>
                                 </div>
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/frontend/assets/images/products/product-image-3.jpg') }}"
+                                        href="{{ asset('/public/frontend/assets/images/products/product-image-3.jpg') }}"
                                         data-caption="Product Zoom Image 6">
-                                        <img src="{{ asset('/frontend/assets/images/products/product-image-3.jpg') }}"
+                                        <img src="{{ asset('/public/frontend/assets/images/products/product-image-3.jpg') }}"
                                             alt="product image">
                                     </a>
                                 </div>
                             </div>
                             <div class="tm-prodetails-thumbnails">
                                 <div class="tm-prodetails-thumbnail">
-                                    <img src="{{ asset('/frontend/assets/images/products/product-image-1-thumb.jpg') }}"
+                                    <img src="{{ asset('/public/frontend/assets/images/products/product-image-1-thumb.jpg') }}"
                                         alt="product image">
                                 </div>
                                 <div class="tm-prodetails-thumbnail">
-                                    <img src="{{ asset('/frontend/assets/images/products/product-image-2-thumb.jpg') }}"
+                                    <img src="{{ asset('/public/frontend/assets/images/products/product-image-2-thumb.jpg') }}"
                                         alt="product image">
                                 </div>
                                 <div class="tm-prodetails-thumbnail">
-                                    <img src="{{ asset('/frontend/assets/images/products/product-image-3-thumb.jpg') }}"
+                                    <img src="{{ asset('/public/frontend/assets/images/products/product-image-3-thumb.jpg') }}"
                                         alt="product image">
                                 </div>
                                 <div class="tm-prodetails-thumbnail">
-                                    <img src="{{ asset('/frontend/assets/images/products/product-image-1-thumb.jpg') }}"
+                                    <img src="{{ asset('/public/frontend/assets/images/products/product-image-1-thumb.jpg') }}"
                                         alt="product image">
                                 </div>
                                 <div class="tm-prodetails-thumbnail">
-                                    <img src="{{ asset('/frontend/assets/images/products/product-image-2-thumb.jpg') }}"
+                                    <img src="{{ asset('/public/frontend/assets/images/products/product-image-2-thumb.jpg') }}"
                                         alt="product image">
                                 </div>
                                 <div class="tm-prodetails-thumbnail">
-                                    <img src="{{ asset('/frontend/assets/images/products/product-image-3-thumb.jpg') }}"
+                                    <img src="{{ asset('/public/frontend/assets/images/products/product-image-3-thumb.jpg') }}"
                                         alt="product image">
                                 </div>
                             </div>
@@ -288,5 +288,5 @@
     <!--// Products Wrapper -->
 @endsection
 @push('js')
-    <script src="{{ asset('frontend/assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
 @endpush

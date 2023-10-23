@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-md-4 text-center tm-header-top-logo">
                     <a href="{{url('/')}}" class="tm-header-logo">
-                        <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Woman's World">
+                        <img src="{{ asset('public/frontend/assets/images/logo.png') }}" alt="Woman's World">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -37,7 +37,7 @@
                 <div class="tm-header-inner">
                     <div class="tm-header-sticky-logo d-none">
                         <a href="{{url('/')}}" class="tm-header-logo">
-                            <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Woman's World">
+                            <img src="{{ asset('public/frontend/assets/images/logo.png') }}" alt="Woman's World">
                         </a>
                     </div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/service.css')}}">
+<link rel="stylesheet" href="{{ asset('public/frontend/assets/css/service.css')}}">
 
 @endpush
 @section('frontend-content')
@@ -10,16 +10,16 @@
         <div class="row body-treatment-inner mb-5">
             <div class="col-lg-6 treatment-img">
                 <div class="treatment-bg-img">
-                    <img src="{{ asset('frontend/assets/images/services/bg.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/bg.png')}}" alt="">
                 </div>
                 <div class="item-image">
-                    <img src="{{ asset('frontend/assets/images/services/service1.jpg')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1.jpg')}}" alt="">
                 </div>
                 {{-- <div class="treatment-main-img">
-                    <img src="{{ asset('frontend/assets/images/services/service1_1.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1_1.png')}}" alt="">
                 </div>
                 <div class="treatment-sub-img">
-                    <img src="{{ asset('frontend/assets/images/services/service1_2.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1_2.png')}}" alt="">
                 </div> --}}
             </div>
             <div class="col-lg-6 treatment-content">
@@ -50,26 +50,26 @@
             </div>
             <div class="col-lg-6 treatment-img">
                 <div class="treatment-bg-img">
-                    <img src="{{ asset('frontend/assets/images/services/bg.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/bg.png')}}" alt="">
                 </div>
                 <div class="item-image">
-                    <img src="{{ asset('frontend/assets/images/services/service2.jpg')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service2.jpg')}}" alt="">
                 </div>
             </div>
         </div>
         <div class="row body-treatment-inner mb-5">
             <div class="col-lg-6 treatment-img">
                 <div class="treatment-bg-img">
-                    <img src="{{ asset('frontend/assets/images/services/bg.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/bg.png')}}" alt="">
                 </div>
                 <div class="item-image">
-                    <img src="{{ asset('frontend/assets/images/services/service3.jpeg')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service3.jpeg')}}" alt="">
                 </div>
                 {{-- <div class="treatment-main-img">
-                    <img src="{{ asset('frontend/assets/images/services/service1_1.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1_1.png')}}" alt="">
                 </div>
                 <div class="treatment-sub-img">
-                    <img src="{{ asset('frontend/assets/images/services/service1_2.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1_2.png')}}" alt="">
                 </div> --}}
             </div>
             <div class="col-lg-6 treatment-content">
@@ -104,26 +104,26 @@
             </div>
             <div class="col-lg-6 treatment-img">
                 <div class="treatment-bg-img">
-                    <img src="{{ asset('frontend/assets/images/services/bg.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/bg.png')}}" alt="">
                 </div>
                 <div class="item-image">
-                    <img src="{{ asset('frontend/assets/images/services/service1.jpg')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1.jpg')}}" alt="">
                 </div>
             </div>
         </div>
         <div class="row body-treatment-inner mb-5">
             <div class="col-lg-6 treatment-img">
                 <div class="treatment-bg-img">
-                    <img src="{{ asset('frontend/assets/images/services/bg.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/bg.png')}}" alt="">
                 </div>
                 <div class="item-image">
-                    <img src="{{ asset('frontend/assets/images/services/service1.jpg')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1.jpg')}}" alt="">
                 </div>
                 {{-- <div class="treatment-main-img">
-                    <img src="{{ asset('frontend/assets/images/services/service1_1.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1_1.png')}}" alt="">
                 </div>
                 <div class="treatment-sub-img">
-                    <img src="{{ asset('frontend/assets/images/services/service1_2.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1_2.png')}}" alt="">
                 </div> --}}
             </div>
             <div class="col-lg-6 treatment-content">
@@ -157,10 +157,10 @@
             </div>
             <div class="col-lg-6 treatment-img">
                 <div class="treatment-bg-img">
-                    <img src="{{ asset('frontend/assets/images/services/bg.png')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/bg.png')}}" alt="">
                 </div>
                 <div class="item-image">
-                    <img src="{{ asset('frontend/assets/images/services/service1.jpg')}}" alt="">
+                    <img src="{{ asset('public/frontend/assets/images/services/service1.jpg')}}" alt="">
                 </div>
             </div>
         </div>
@@ -175,7 +175,7 @@
                 <div class="tm-sectiontitle text-center">
                     <h2>Gallery</h2>
                     <span class="tm-sectiontitle-divider">
-                        <img src="{{ asset('frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
+                        <img src="{{ asset('public/frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
                     </span>
                     <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit
                         inuning ut sed sittem do eiusmod.</p>
@@ -189,9 +189,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-1.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-1.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Self makeup at home">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-1.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-1.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>
@@ -203,7 +203,7 @@
                 <div class="tm-portfolio tm-scrollanim">
                     <a href="https://www.youtube.com/watch?v=mHUOCxVT5ro" data-fancybox="portfolio-gallery"
                         data-caption="Red Leapstick">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-5.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-5.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti-control-play"></i></span>
                 </div>
@@ -213,9 +213,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-2.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-2.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Leapstick">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-2.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-2.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>
@@ -225,9 +225,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-3.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-3.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Face Treatment">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-3.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-3.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>
@@ -237,9 +237,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-4.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-4.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Clean Face">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-4.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-4.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>
@@ -249,9 +249,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-6.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-6.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Cleaning Face">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-6.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-6.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>
@@ -261,9 +261,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-7.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-7.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Art Leapstick">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-7.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-7.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>
@@ -273,9 +273,9 @@
             <!-- Single Portfolio -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mt-30">
                 <div class="tm-portfolio tm-scrollanim">
-                    <a href="{{ asset('frontend/assets/images/portfolio/portfolio-image-lg-8.jpg')}}"
+                    <a href="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-lg-8.jpg')}}"
                         data-fancybox="portfolio-gallery" data-caption="Skin treatment">
-                        <img src="{{ asset('frontend/assets/images/portfolio/portfolio-image-8.jpg')}}" alt="portfolio image">
+                        <img src="{{ asset('public/frontend/assets/images/portfolio/portfolio-image-8.jpg')}}" alt="portfolio image">
                     </a>
                     <span class="tm-portfolio-icon"><i class="ti ti-fullscreen"></i></span>
                 </div>

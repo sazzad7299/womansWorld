@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/service.css')}}">
+<link rel="stylesheet" href="{{ asset('public/frontend/assets/css/service.css')}}">
 
 @endpush
 @section('frontend-content')

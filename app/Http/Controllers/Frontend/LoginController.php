@@ -24,6 +24,7 @@ class LoginController extends Controller
 
     public function user()
     {
+        
         return view('frontend.user');
     }
 }

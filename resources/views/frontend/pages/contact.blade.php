@@ -1,19 +1,19 @@
 @extends('layouts.master')
 @push('css')
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/service.css')}}">
+<link rel="stylesheet" href="{{ asset('public/frontend/assets/css/service.css')}}">
 
 @endpush
 @section('frontend-content')
     <!-- Contact Us -->
     <div id="tm-contactus-area" class="tm-section tm-contact-area tm-padding-section bg-white"
-    data-bgimage="{{asset('frontend/assets/images/contact-us-background.png')}}" data-white-overlay="8">
+    data-bgimage="{{asset('public/frontend/assets/images/contact-us-background.png')}}" data-white-overlay="8">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-9 col-12">
                 <div class="tm-sectiontitle text-center">
                     <h2>Contact Us</h2>
                     <span class="tm-sectiontitle-divider">
-                        <img src="{{asset('frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
+                        <img src="{{asset('public/frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
                     </span>
                     <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit
                         inuning ut sed sittem do eiusmod.</p>

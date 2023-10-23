@@ -1,5 +1,5 @@
  <!-- Breadcrumb Area -->
- <div class="tm-breadcrumb-area tm-padding-section bg-grey" data-bgimage="{{asset('frontend/assets/images/breadcrumb-bg.jpg')}}">
+ <div class="tm-breadcrumb-area tm-padding-section bg-grey" data-bgimage="{{asset('public/frontend/assets/images/breadcrumb-bg.jpg')}}">
     <div class="container">
         <div class="tm-breadcrumb">
             <h2>Page title</h2>

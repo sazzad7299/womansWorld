@@ -14,7 +14,7 @@ use App\Http\Resources\V1\OrdersResource;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function admin()
     {
         $today = Carbon::today();
 

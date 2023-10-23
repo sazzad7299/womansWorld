@@ -1,4 +1,12 @@
 @extends('layouts.master')
+
+@push('css')
+ <style>
+    .tm-breadcrumb-area{
+        display: none;
+    }
+ </style>
+@endpush
 @section('frontend-content')
  <!-- Heroslider Area -->
  <div class="tm-heroslider-area">
@@ -6,7 +14,7 @@
     <div class="tm-heroslider-slider">
 
         <!-- Heroslider Item -->
-        <div class="tm-heroslider" data-bgimage="{{asset('frontend/assets/images/slider1.jpeg')}}">
+        <div class="tm-heroslider" data-bgimage="{{asset('public/frontend/assets/images/slider1.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -25,7 +33,7 @@
         <!--// Heroslider Item -->
 
         <!-- Heroslider Item -->
-        <div class="tm-heroslider text-white" data-bgimage="{{ asset('frontend/assets/images/slider2.jpeg')}}">
+        <div class="tm-heroslider text-white" data-bgimage="{{ asset('public/frontend/assets/images/slider2.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -44,7 +52,7 @@
         <!--// Heroslider Item -->
 
         <!-- Heroslider Item -->
-        <div class="tm-heroslider text-white" data-bgimage="{{('frontend/assets/images/slider3.jpeg')}}">
+        <div class="tm-heroslider text-white" data-bgimage="{{('public/frontend/assets/images/slider3.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -132,21 +140,21 @@
    <!-- Brand Area -->
     <!-- About Area -->
     <section id="tm-about-area" class="tm-section tm-about-area tm-padding-section bg-white"
-        data-bgimage="{{ asset('frontend/assets/images/about-bg-image.png')}}" data-white-overlay="8">
+        data-bgimage="{{ asset('public/frontend/assets/images/about-bg-image.png')}}" data-white-overlay="8">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-9 col-12">
                     <div class="tm-sectiontitle text-center">
                         <h2>About Us</h2>
                         <span class="tm-sectiontitle-divider">
-                            <img src="{{ asset('frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
+                            <img src="{{ asset('public/frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
                         </span>
                         <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit
                             inuning ut sed sittem do eiusmod.</p>
                     </div>
                 </div>
             </div>
-            <div class="tm-about tm-scrollanim" data-bgimage="{{ asset('frontend/assets/images/about-block-background.jpg')}}">
+            <div class="tm-about tm-scrollanim" data-bgimage="{{ asset('public/frontend/assets/images/about-block-background.jpg')}}">
                 <div class="row">
                     <div class="col-xl-7 col-lg-8">
                         <h3>Welcome to Woman's World beauty</h3>
@@ -172,7 +180,7 @@
                     <div class="tm-sectiontitle text-center">
                         <h2>Our Populer Services</h2>
                         <span class="tm-sectiontitle-divider">
-                            <img src="{{ asset('frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
+                            <img src="{{ asset('public/frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
                         </span>
                         <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit
                             inuning ut sed sittem do eiusmod.</p>
@@ -267,8 +275,8 @@
                 <div class="col-lg-6">
                     <div class="tm-beforeafter">
                         <div class="tm-beforeafter-image">
-                            <img src="{{ asset('frontend/assets/images/services/service1.jpg')}}" alt="before image">
-                            <img src="{{ asset('frontend/assets/images/services/service2.jpg')}}" alt="after image">
+                            <img src="{{ asset('public/frontend/assets/images/services/service1.jpg')}}" alt="before image">
+                            <img src="{{ asset('public/frontend/assets/images/services/service2.jpg')}}" alt="after image">
                         </div>
                     </div>
                 </div>
@@ -321,14 +329,14 @@
 
     <!-- Testimonial Area -->
     <div class="tm-section tm-testimonial-area tm-padding-section bg-white" data-white-overlay="8"
-        data-bgimage="{{ asset('frontend/assets/images/testimonial-bg-image.png')}}">
+        data-bgimage="{{ asset('public/frontend/assets/images/testimonial-bg-image.png')}}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-9 col-12">
                     <div class="tm-sectiontitle text-center">
                         <h2>Why We Are Best... ?</h2>
                         <span class="tm-sectiontitle-divider">
-                            <img src="{{ asset('frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
+                            <img src="{{ asset('public/frontend/assets/images/section-divider-icon.png')}}" alt="section divider">
                         </span>
                         <p>Lorem ipsum dolor sittem ametamngcing elit, per sed do eiusmoad teimpor sittem elit
                             inuning ut sed sittem do eiusmod.</p>
@@ -340,7 +348,7 @@
                 <!-- Testimonial Single -->
                 <div class="tm-testimonial">
                     <span class="tm-testimonial-authorimage">
-                        <img src="{{ asset('frontend/assets/images/author-image-1.png')}}" alt="author image">
+                        <img src="{{ asset('public/frontend/assets/images/author-image-1.png')}}" alt="author image">
                     </span>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin porttitor nisl nec ex
                         consectetur quis ornare sem molestie. Sed suscipit sollicitudin nulla tempor congue.
@@ -356,7 +364,7 @@
                 <!-- Testimonial Single -->
                 <div class="tm-testimonial">
                     <span class="tm-testimonial-authorimage">
-                        <img src="{{ asset('frontend/assets/images/author-image-2.png')}}" alt="author image">
+                        <img src="{{ asset('public/frontend/assets/images/author-image-2.png')}}" alt="author image">
                     </span>
                     <p>Suscipit nobis quo ut qui rerum. Quia fugit voluptate quis totam. Iure qui dolorem
                         quisquam placeat facilis ut et. Nisi et necessitatibus sequi cumque. Quasi laudantium
@@ -372,7 +380,7 @@
                 <!-- Testimonial Single -->
                 <div class="tm-testimonial">
                     <span class="tm-testimonial-authorimage">
-                        <img src="{{ asset('frontend/assets/images/author-image-3.png')}}" alt="author image">
+                        <img src="{{ asset('public/frontend/assets/images/author-image-3.png')}}" alt="author image">
                     </span>
                     <p>Et illum consequatur. Optio sunt et aut. Voluptatem assumenda maiores aut vitae ut.
                         Pariatur placeat necessitatibus modi vero enim velit. Qui error qui eligendi
@@ -392,7 +400,7 @@
 
     <!-- Subscribe Area -->
     {{-- <div class="tm-section tm-subscribe-area tm-padding-section bg-grey"
-        data-bgimage="{{ asset('frontend/assets/images/subscribe-bg-image.png')}}">
+        data-bgimage="{{ asset('public/frontend/assets/images/subscribe-bg-image.png')}}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 col-md-10 col-12">
