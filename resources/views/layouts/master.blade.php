@@ -53,7 +53,6 @@
     <x-breadcrumb></x-breadcrumb>
     @endif
 
-
     @yield('frontend-content')
 
    @include('layouts.footer')

@@ -12,7 +12,8 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::latest()->take(3)->get();
-        $products = Product::latest()->take(42)->get();
-        return view('frontend.index', compact('sliders', 'products'));
+        // dd($sliders);
+        $products = Product::latest()->take(4)->get();
+        return view('welcome', compact('sliders', 'products'));
     }
 }

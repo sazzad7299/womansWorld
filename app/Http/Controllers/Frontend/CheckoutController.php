@@ -21,7 +21,7 @@ class CheckoutController extends Controller
         } else {
 
             Session::put('checkout', true);
-            return redirect()->route('user-login');
+            return redirect()->route('login');
         }
     }
 

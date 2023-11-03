@@ -1,20 +1,31 @@
 @extends('layouts.master')
 
 @push('css')
- <style>
-    .tm-breadcrumb-area{
-        display: none;
-    }
- </style>
+
 @endpush
 @section('frontend-content')
  <!-- Heroslider Area -->
  <div class="tm-heroslider-area">
 
     <div class="tm-heroslider-slider">
-
-        <!-- Heroslider Item -->
-        <div class="tm-heroslider" data-bgimage="{{asset('public/frontend/assets/images/slider1.jpeg')}}">
+        @forelse ($sliders as $slider)
+        <div class="tm-heroslider" data-bgimage="{{asset($slider->photo)}}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-9">
+                        <div class="tm-heroslider-contentwrapper">
+                            <div class="tm-heroslider-content">
+                                <h1>{{$slider->title}}</h1>
+                                <p>{{$slider->short_desc}}.</p>
+                                    <a href="{{$slider->link}}" class="tm-button">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @empty
+        {{-- <div class="tm-heroslider" data-bgimage="{{asset('public/frontend/assets/images/slider1.jpeg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9">
@@ -29,46 +40,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!--// Heroslider Item -->
-
-        <!-- Heroslider Item -->
-        <div class="tm-heroslider text-white" data-bgimage="{{ asset('public/frontend/assets/images/slider2.jpeg')}}">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-9">
-                        <div class="tm-heroslider-contentwrapper">
-                            <div class="tm-heroslider-content">
-                                <h1>Beauty have changed greatly over the years</h1>
-                                <p>The experience of beauty often involves an interpretation of some
-                                    entity as being in balance.</p>
-                                <a href="{{route('shop')}}" class="tm-button">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--// Heroslider Item -->
-
-        <!-- Heroslider Item -->
-        <div class="tm-heroslider text-white" data-bgimage="{{('public/frontend/assets/images/slider3.jpeg')}}">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-9">
-                        <div class="tm-heroslider-contentwrapper">
-                            <div class="tm-heroslider-content">
-                                <h1>Beauty is first and foremost an emotion</h1>
-                                <p>The experience of beauty often involves an interpretation of some
-                                    entity as being in balance.</p>
-                                    <a href="{{route('shop')}}" class="tm-button">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--// Heroslider Item -->
+        </div> --}}
+        @endforelse
 
     </div>
 
@@ -261,26 +234,6 @@
     <!-- Offer Area -->
     <div class="tm-section tm-offer-area tm-padding-section bg-grey">
         <div class="container">
-            {{-- <div class="row align-items-center">
-                <div class="col-lg-6 col-12 order-2 order-lg-1">
-                    <div class="tm-offer-left tm-scrollanim">
-                        <h1>Deal of the Month</h1>
-                        <h3>Get <span>40%</span> discount</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diamusus nonummy nibh
-                            euismod tincidunt ut laoreet dolore magn aliquam erat volutpat. Ut wisi enim ad min
-                            que. Pellent maximus exet velit tincidunt in pharetra</p>
-                        <a href="contact.html" class="tm-button">Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="tm-beforeafter">
-                        <div class="tm-beforeafter-image">
-                            <img src="{{ asset('public/frontend/assets/images/services/service1.jpg')}}" alt="before image">
-                            <img src="{{ asset('public/frontend/assets/images/services/service2.jpg')}}" alt="after image">
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             <div class="tm-offer-left tm-scrollanim text-center">
                 <h2>Kona By Farnaz Alam</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
@@ -397,37 +350,6 @@
         </div>
     </div>
     <!--// Testimonial Area -->
-
-    <!-- Subscribe Area -->
-    {{-- <div class="tm-section tm-subscribe-area tm-padding-section bg-grey"
-        data-bgimage="{{ asset('public/frontend/assets/images/subscribe-bg-image.png')}}">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10 col-md-10 col-12">
-                    <div class="tm-subscribe tm-scrollanim">
-                        <h3>Subscribe to our Newsletter</h3>
-                        <p>If you have any questions, you can contact with us so that we can give you a
-                            satisfying
-                            answer.</p>
-                        <form id="tm-mailchimp-form" class="tm-subscribe-form">
-                            <input id="mc-email" type="email" placeholder="Email address...">
-                            <button id="mc-submit" type="submit" class="tm-button"><i
-                                    class="flaticon-paper-plane"></i></button>
-                        </form>
-                        <!-- Mailchimp Alerts -->
-                        <div class="tm-mailchimp-alerts">
-                            <div class="tm-mailchimp-submitting"></div>
-                            <div class="mailchimp-success"></div>
-                            <div class="tm-mailchimp-error"></div>
-                        </div>
-                        <!--// Mailchimp Alerts -->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!--// Subscribe Area -->
 
 </main>
 <!--// Page Content -->
