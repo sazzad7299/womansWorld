@@ -1,18 +1,23 @@
 @extends('backend.layouts.app')
-
 @section('title', 'New Product')
 @section('content')
-    <div class="page-content">
         <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-xl-2">
+                            <h5>Add Product</h5>
+                        </div>
+                        <div class="col-lg-9 col-xl-10">
+                            <a href="{{route('admin.products.index')}}" class="btn btn-primary mb-3 mb-lg-0  float-lg-end"><i class="bi bi-file-fill"></i>Product List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
                         @include('includes.error')
-                        <div class="d-flex justify-content-between">
-                            <h6 class="card-title">{{ __('New Product') }}</h6>
-                            <a class="btn btn-outline-primary text-end"
-                                href="{{ route('admin.products.index') }}">{{ __('All Product') }}</a>
-                        </div>
                         <form class="forms-sample" method="POST" action="{{ route('admin.products.store') }}"
                             enctype="multipart/form-data">
                             @csrf
@@ -154,7 +159,7 @@
                                               <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="1" name="p_set">
                                                 <label class="form-check-label" for="flexCheckChecked">
-                                                  Perfume Set
+                                                  Gift Set
                                                 </label>
                                               </div>
                                               <div class="form-check">
@@ -200,15 +205,12 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection
-
-@section('footer')
+@push('js')
     <script>
         function readPicture(input) {
             if (input.files && input.files[0]) {
@@ -233,4 +235,4 @@
             $("#slug").val(slug);
         });
     </script>
-@endsection
+@endpush

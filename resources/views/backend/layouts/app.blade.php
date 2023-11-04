@@ -1,158 +1,138 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-theme">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>@yield('title')</title>
-  {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  <link rel="shortcut icon" href="{{ asset('public/backend/assets/images/fav.ico') }}">
-  <link rel="stylesheet" href="{{ asset('public/backend/assets/plugins/core/core.css') }}">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <link rel="stylesheet"
-      href="{{ asset('public/backend/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
-  <!-- end plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="{{ asset('public/backend/assets/fonts/feather-font/css/iconfont.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/backend/assets/plugins/flag-icon-css/css/flag-icon.min.css') }}">
-  <link href="{{ asset('public/backend/assets/plugins/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" />
-  <link href="{{ asset('public/backend/assets/plugins/select2/select2.min.css') }}" rel="stylesheet" />
-  <!-- endinject -->
-  <link href="{{ asset('public/backend/assets/css/app.css') }}" rel="stylesheet" />
-  <!-- Layout styles -->
-  <link rel="stylesheet" href="{{ asset('public/backend/assets/css/demo_1/style.css') }}">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ asset('backend/assets/images/favicon-32x32.png')}}" type="image/png" />
+  <!--plugins-->
+  <link href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="{{ asset('backend/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/css/bootstrap-extended.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/css/style.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/css/icons.css')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- loader-->
+	<link href="{{ asset('backend/assets/css/pace.min.css')}}" rel="stylesheet" />
+  <!--Theme Styles-->
+  <link href="{{ asset('backend/assets/css/dark-theme.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/css/light-theme.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/css/semi-dark.css')}}" rel="stylesheet" />
+  <link href="{{ asset('backend/assets/css/header-colors.css')}}" rel="stylesheet" />
+  <title>@yield('title')</title>
   @stack('css')
-  <style>
-    .notification{
-        position: absolute;
-    z-index: 99999;
-    color: white;
-    top: -3px;
-    right: 0;
-    background: #cc1616;
-    padding: 2px 8px;
-    border-radius: 10px;
-    }
-  </style>
 </head>
-<body>
-    <script src="{{ asset('public/backend/assets/js/spinner.js') }}"></script>
 
-    <div class="main-wrapper" id="app">
-        <nav class="sidebar">
-            <div class="sidebar-header">
-                <a href="{{ URL::to('/') }}" class="sidebar-brand" style="font-size: 20px;line-height:18px">
-                    PERFUME <br><span>SOMAHAR</span>
-                </a>
-                <div class="sidebar-toggler not-active">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+<body>
+
+  <!--start wrapper-->
+  <div class="wrapper">
+
+     @include('backend.layouts.topbar')
+       <!--start sidebar -->
+       @include('backend.layouts.sidebar')
+       <!--end sidebar -->
+
+       <!--start content-->
+          <main class="page-content">
+            @yield('content')
+          </main>
+       <!--end page main-->
+
+
+       <!--start overlay-->
+        <div class="overlay nav-toggle-icon"></div>
+       <!--end overlay-->
+
+        <!--Start Back To Top Button-->
+        <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+
+        <!--start switcher-->
+       <div class="switcher-body">
+        <button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-paint-bucket me-0"></i></button>
+        <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <h6 class="mb-0">Theme Variation</h6>
+            <hr>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1" checked>
+              <label class="form-check-label" for="LightTheme">Light</label>
             </div>
-            @include('backend.layouts.sidebar')
-        </nav>
-        <nav class="settings-sidebar">
-            <div class="sidebar-body">
-              <a href="#" class="settings-sidebar-toggler">
-                <i data-feather="settings"></i>
-              </a>
-              <h6 class="text-muted">Sidebar:</h6>
-              <div class="form-group border-bottom">
-                <div class="form-check form-check-inline">
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight" value="sidebar-light" checked>
-                    Light
-                  </label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2">
+              <label class="form-check-label" for="DarkTheme">Dark</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme" value="option3">
+              <label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
+            </div>
+            <hr>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="MinimalTheme" value="option3">
+              <label class="form-check-label" for="MinimalTheme">Minimal Theme</label>
+            </div>
+            <hr/>
+            <h6 class="mb-0">Header Colors</h6>
+            <hr/>
+            <div class="header-colors-indigators">
+              <div class="row row-cols-auto g-3">
+                <div class="col">
+                  <div class="indigator headercolor1" id="headercolor1"></div>
                 </div>
-                <div class="form-check form-check-inline">
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarDark" value="sidebar-dark">
-                    Dark
-                  </label>
+                <div class="col">
+                  <div class="indigator headercolor2" id="headercolor2"></div>
+                </div>
+                <div class="col">
+                  <div class="indigator headercolor3" id="headercolor3"></div>
+                </div>
+                <div class="col">
+                  <div class="indigator headercolor4" id="headercolor4"></div>
+                </div>
+                <div class="col">
+                  <div class="indigator headercolor5" id="headercolor5"></div>
+                </div>
+                <div class="col">
+                  <div class="indigator headercolor6" id="headercolor6"></div>
+                </div>
+                <div class="col">
+                  <div class="indigator headercolor7" id="headercolor7"></div>
+                </div>
+                <div class="col">
+                  <div class="indigator headercolor8" id="headercolor8"></div>
                 </div>
               </div>
-              {{-- <div class="theme-wrapper">
-                <h6 class="text-muted mb-2">Light Theme:</h6>
-                <a class="theme-item active" href="">
-                  <img src="{{ asset('public/public/backend/assets/images/screenshots/light.jpg') }}" alt="light theme">
-                </a>
-                <h6 class="text-muted mb-2">Dark Theme:</h6>
-                <a class="theme-item" href="">
-                  <img src="{{ asset('public/public/backend/assets/images/screenshots/dark.jpg') }}" alt="light theme">
-                </a>
-              </div> --}}
             </div>
-        </nav>
-        <div class="page-wrapper">
-
-            @include('backend.layouts.topbar')
-            @section('content')
-
-            @show
-            <footer
-                class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
-                <p class="text-muted mb-1 mb-md-0">{{ __('Copyright ©') }} {{ date('Y') }} <a
-                        href="https://www.ictbanglabd.com/" target="_blank">{{ __('ictbd') }}</a>.</p>
-                <p class="text-muted">Handcrafted With <i class="mb-1 text-primary ms-1 icon-sm"
-                        data-feather="heart"></i></p>
-            </footer>
+          </div>
         </div>
-    </div>
-    <script src="{{ asset('public/backend/assets/plugins/core/core.js') }}"></script>
-    <!-- endinject -->
-    <!-- plugin js for this page -->
-    <script src="{{ asset('public/backend/assets/plugins/chartjs/chart.min.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/plugins/jquery.flot/jquery.flot.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/plugins/jquery.flot/jquery.flot.resize.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <!-- end plugin js for this page -->
-    <!-- inject:js -->
-    <script src="{{ asset('public/backend/assets/plugins/feather-icons/feather.min.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/plugins/progressbar-js/progressbar.min.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+       </div>
+       <!--end switcher-->
 
-    <script src="{{ asset('public/backend/assets/plugins/select2/select2.min.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/js/template.js') }}"></script>
-    <!-- endinject -->
-    <!-- custom js for this page -->
-    <script src="{{ asset('public/backend/assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/js/datepicker.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/js/data-table.js') }}"></script>
-    <script src="{{ asset('public/backend/assets/js/select2.js') }}"></script>
-    <script src="https://cdn.ckeditor.com/4.5.7/full/ckeditor.js"></script>
-    <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'center',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-        });
+  </div>
+  <!--end wrapper-->
 
-        @if (session()->has('success') || session()->has('error'))
-            @if (session()->has('error'))
-                Toast.fire({
-                    icon: 'error',
-                    title: '{{ session('error') }}'
-                })
-            @else
-                Toast.fire({
-                    icon: 'success',
-                    title: '{{ session('success') }}'
-                })
-            @endif
-        @endif
-    </script>
 
-    @section('footer')
-
-    @show
-    @stack('js')
-
+  <!-- Bootstrap bundle JS -->
+  <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js')}}"></script>
+  <!--plugins-->
+  <script src="{{ asset('backend/assets/js/jquery.min.js')}}"></script>
+  <script src="{{ asset('backend/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
+  <script src="{{ asset('backend/assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
+  <script src="{{ asset('backend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+  <script src="{{ asset('backend/assets/js/pace.min.js')}}"></script>
+  <!--app-->
+  <script src="{{ asset('backend/assets/js/app.js')}}"></script>
+  <script src="https://cdn.ckeditor.com/4.5.7/full/ckeditor.js"></script>
+  @stack('js')
 </body>
 
 </html>
