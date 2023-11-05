@@ -15,16 +15,25 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row mb-3">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label">{{ __('Title') }}</label>
+                                        <input type="text" class="form-control" placeholder="{{ __('Title') }}"
+                                            autocomplete="off" name="title" value="{{ old('title',$slider->title) }}" required="" />
+                                    </div>
+                                    <div class="col-md-12 mb-2">
                                         <label class="form-label">{{ __('Link') }}</label>
                                         <input type="text" class="form-control" placeholder="{{ __('Link') }}"
-                                            autocomplete="off" name="link" value="{{ $slider->link }}" required="" />
+                                            autocomplete="off" name="link" value="{{ old('link',$slider->link) }}" required="" />
+                                    </div>
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label">{{ __('Short Description') }}</label>
+                                       <textarea name="short_desc"  class="form-control">{{old('short_desc',$slider->short_desc)}}</textarea>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label">{{ __('Photo') }} <small
                                                 style="color: red">{{ __('(Photo Max Size:1MB)') }}</small> </label>
                                         <br />
-                                        <input type="file" name="photo" onchange="readPicture(this)" required="" />
+                                        <input type="file" name="photo" onchange="readPicture(this)" />
                                     </div>
                                     <div class="col-md-3"></div>
                                     <div class="col-md-6">
@@ -54,10 +63,19 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label">{{ __('Title') }}</label>
+                                        <input type="text" class="form-control" placeholder="{{ __('Title') }}"
+                                            autocomplete="off" name="title" value="{{ old('title') }}" required="" />
+                                    </div>
+                                    <div class="col-md-12 mb-2">
                                         <label class="form-label">{{ __('Link') }}</label>
                                         <input type="text" class="form-control" placeholder="{{ __('Link') }}"
                                             autocomplete="off" name="link" value="{{ old('link') }}" required="" />
+                                    </div>
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label">{{ __('Short Description') }}</label>
+                                       <textarea name="short_desc"  class="form-control">{{old('short_desc')}}</textarea>
                                     </div>
                                     <br>
                                     <div class="col-md-12">
@@ -97,7 +115,8 @@
                                 <thead>
                                     <tr>
                                         <th width="10%">{{ __('Sl') }}</th>
-                                        <th width="70%">{{ __('Link') }}</th>
+                                        <th width="20%">{{ __('Title') }}</th>
+                                        <th width="20%">{{ __('Link') }}</th>
                                         <th width="10%">{{ __('Photo') }}</th>
                                         <th width="10%">{{ __('Action') }}</th>
                                     </tr>
@@ -106,6 +125,7 @@
                                     @foreach ($sliders as $item)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $item->title }}</td>
                                             <td>{{ $item->link }}</td>
                                             <td class="py-1">
                                                 <img src="{{ asset($item->photo) }}" alt="image">

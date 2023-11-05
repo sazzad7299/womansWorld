@@ -15,7 +15,6 @@
 @endpush
 @section('title', 'Order Details')
 @section('content')
-    <div class="page-content">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-5">
@@ -230,7 +229,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <div class="modal fade bd-example-modal-sm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
         id="sendinvoice">
         <div class="modal-dialog">

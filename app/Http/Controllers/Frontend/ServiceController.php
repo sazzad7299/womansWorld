@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
+    public function index(Request $request){
+        return view('backend.admin.services.index');
+    }
     public function store(Request $request)
     {
         $serviceObject = new Service();

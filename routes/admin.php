@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\WebInfoController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\PayOptionController;
 use App\Http\Controllers\Admin\PageController;
@@ -10,19 +11,20 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\StockManagement;
 use App\Http\Controllers\Admin\HelperController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GeneralController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProductRequestController;
 use App\Http\Controllers\ShippingOptionController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ChildCategoryController;
-use App\Http\Controllers\Admin\StockManagement;
-use App\Http\Controllers\WebInfoController;
+use App\Http\Controllers\Admin\ServiceCategoryController;
 
 Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => ['admin', 'auth']], function () {
 
@@ -39,6 +41,8 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => ['admin', 
     Route::resource('admins', AdminController::class)->except(['show']);
     Route::resource('users', UserController::class)->except(['show']);
     Route::resource('products', ProductController::class);
+    Route::resource('services', ServiceController::class);
+    Route::resource('service-category', ServiceCategoryController::class);
     Route::resource('orders', OrderController::class);
     Route::resource('requestproduct', ProductRequestController::class);
     Route::resource('generals', GeneralController::class)->except(['create', 'edit', 'show']);

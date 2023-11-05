@@ -10,7 +10,7 @@ class Slider extends Model
     use HasFactory;
 
     protected $fillable = [
-        'link', 'photo',
+        'link', 'photo','title','short_desc',
     ];
 
     public function storeSlider(Object $request)
@@ -24,6 +24,8 @@ class Slider extends Model
         $success         = $image->move($upload_path, $image_full_name);
         $this->photo     = $image_url;
         $this->link      = $request->link;
+        $this->title      = $request->title;
+        $this->short_desc  = $request->short_desc;
         $storeSlider     = $this->save();
 
         $storeSlider

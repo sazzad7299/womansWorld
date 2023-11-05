@@ -5,12 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
 
-Route::get('/', function () {
-    $products = Product::take(4)->get();
-    return view('welcome',compact('products'));
-});
+Route::get('/', [HomeController::class,'index']);
 Route::get('service', function () {
     return view('frontend.pages.service');
 })->name('service');
@@ -46,8 +44,8 @@ Route::get('my-account', [DashboardController::class, 'index'])->name('dashboard
 
 Route::group(['middleware' => ['auth','guest']], function () {
     Route::get('login-register', function () {
-        return view('frontend.pages.login-register');
-    })->name('user-login');
+        return view('auth.login');
+    })->name('login');
 });
 Route::group(['middleware' => 'auth'], function () {
 

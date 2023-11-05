@@ -22,7 +22,7 @@ class ProductController extends Controller
 
     public function index()
     {
-            $products = Product::query()->with(['size','colors','photos'])->select(['id','name','price','display','status','brand_id'])->paginate(20);
+            $products = Product::query()->with(['size','colors','photos'])->select(['id','name','price','display','status','brand_id'])->paginate(8);
         // return $products;
         return view('backend.admin.products.index',compact('products'));
     }

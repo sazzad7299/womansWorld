@@ -96,6 +96,6 @@ class RegisterController extends Controller
 
         $user->assignRole($role_r);
 
-        return redirect()->route('user-login');
+        return redirect()->route('login');
     }
 }

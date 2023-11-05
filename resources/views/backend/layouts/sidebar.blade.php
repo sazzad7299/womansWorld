@@ -1,179 +1,197 @@
-<div class="sidebar-body">
-    <ul class="nav">
-        <li class="nav-item nav-category">{{ __('Main') }}</li>
-        <li class="nav-item @if (request()->is('admin/dashboard')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.dashboard') }}" class="nav-link">
-                <i class="link-icon" data-feather="box"></i>
-                <span class="link-title">{{ __('Dashboard') }}</span>
+<aside class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header">
+        <div>
+            <img src="{{ asset('backend/assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+        </div>
+        <div>
+            <h4 class="logo-text">WomansWorld</h4>
+        </div>
+        <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
+        </div>
+    </div>
+    <!--navigation-->
+    <ul class="metismenu" id="menu">
+        <li class="@if (request()->is('admin/dashboard')) {{ 'mm-active' }} @endif">
+            <a href="https://codervent.com/skodash/documentation/index.html" target="_blank">
+                <div class="parent-icon"><i class="bi bi-house-fill"></i>
+                </div>
+                <div class="menu-title">{{ __('Dashboard') }}</div>
             </a>
         </li>
-        <li class="nav-item nav-category">{{ __('User Part') }}</li>
-        <li class="nav-item @if (request()->is('admin/admins') || request()->is('admin/admins/*')) {{ 'active' }} @endif">
-            <a class="nav-link" data-toggle="collapse" href="#adminnav" role="button" aria-expanded="false"
-                aria-controls="adminnav">
-                <i class="link-icon" data-feather="user-check"></i>
-                <span class="link-title">{{ __('Admin') }}</span>
-                <i class="link-arrow" data-feather="chevron-down"></i>
+        <li class="menu-label">{{ __('Products')}}</li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bi bi-grid-fill"></i>
+                </div>
+                <div class="menu-title">Products</div>
             </a>
-            <div class="collapse @if (request()->is('admin/admins') || request()->is('admin/admins/*')) {{ 'show' }} @endif" id="adminnav" >
-                <ul class="nav sub-menu">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.admins.create') }}"
-                            class="nav-link @if (request()->is('admin/admins/create')) {{ 'active' }} @endif">{{ __('New Admin') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.admins.index') }}"
-                            class="nav-link @if (request()->is('admin/admins')) {{ 'active' }} @endif">{{ __('All Admin') }}</a>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li class="@if (request()->is('admin/products/create')) {{ 'mm-active' }} @endif"> <a href="{{ route('admin.products.create') }}"><i class="bi bi-circle"></i>Add Product</a>
+                </li>
+                <li  class="@if (request()->is('admin/products/index')) {{ 'mm-active' }} @endif"> <a href="{{ route('admin.products.index') }}"><i class="bi bi-circle"></i>Product List</a>
+                </li>
+                {{-- <li> <a href="app-file-manager.html"><i class="bi bi-circle"></i>Add Category</a>
+                </li> --}}
+                <li class="@if (request()->is('admin/products/categories')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.categories.index')}}"><i class="bi bi-circle"></i>Category List</a>
+                </li>
+                {{-- <li> <a href="app-invoice.html"><i class="bi bi-circle"></i>Add Brand</a>
+                </li>
+                <li> <a href="app-fullcalender.html"><i class="bi bi-circle"></i>Band List</a>
+                </li> --}}
+            </ul>
         </li>
-        <li class="nav-item @if (request()->is('admin/users') || request()->is('admin/users/*')) {{ 'active' }} @endif">
-            <a class="nav-link" data-toggle="collapse" href="#userControl" role="button" aria-expanded="false"
-                aria-controls="userControl">
-                <i class="link-icon" data-feather="user-plus"></i>
-                <span class="link-title">{{ __('User') }}</span>
-                <i class="link-arrow" data-feather="chevron-down"></i>
+        <li class="menu-label">Services</li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bi bi-droplet-fill"></i>
+                </div>
+                <div class="menu-title">Services</div>
             </a>
-            <div class="collapse @if (request()->is('admin/users') || request()->is('admin/users/*')) {{ 'show' }} @endif" id="userControl">
-                <ul class="nav sub-menu">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.users.create') }}"
-                            class="nav-link @if (request()->is('admin/users/create')) {{ 'active' }} @endif">{{ __('New User') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.users.index') }}"
-                            class="nav-link @if (request()->is('admin/users')) {{ 'active' }} @endif">{{ __('All User') }}</a>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li class="@if (request()->is('admin/services/create')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.services.create')}}"><i class="bi bi-circle"></i>Add Service</a>
+                </li>
+                <li class="@if (request()->is('admin/services/index')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.services.index')}}"><i class="bi bi-circle"></i>Service List</a>
+                </li>
+                <li class="@if (request()->is('admin/services/index')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.service-category.index')}}"><i class="bi bi-circle"></i>Category</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item nav-category">{{ __('Product Part') }}</li>
-        <li class="nav-item @if (request()->is('admin/products') || request()->is('admin/products/*')) {{ 'active' }} @endif">
-            <a class="nav-link" data-toggle="collapse" href="#productControl" role="button" aria-expanded="false"
-                aria-controls="productControl">
-                <i class="link-icon" data-feather="file-text"></i>
-                <span class="link-title">{{ __('Products') }}</span>
-                <i class="link-arrow" data-feather="chevron-down"></i>
+        <li class="menu-label">Orders & Review</li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-file-earmark-break-fill"></i>
+                </div>
+                <div class="menu-title">Orders</div>
             </a>
-            <div class="collapse @if (request()->is('admin/products') || request()->is('admin/products/*')) {{ 'show' }} @endif" id="productControl">
-                <ul class="nav sub-menu">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.products.create') }}"
-                            class="nav-link @if (request()->is('admin/products/create')) {{ 'active' }} @endif">{{ __('New Product') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.products.index') }}"
-                            class="nav-link @if (request()->is('admin/products')) {{ 'active' }} @endif">{{ __('All Products') }}</a>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li class=" @if (request()->is('admin/orders')) {{ 'mm-active' }} @endif"> <a href="{{ route('admin.orders.index') }}"><i class="bi bi-circle"></i>Order List</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item @if (request()->is('admin/brands')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.brands.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="codepen"></i>
-                <span class="link-title">{{ __('Brand') }}</span>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-star-fill"></i>
+                </div>
+                <div class="menu-title">Reviews</div>
             </a>
+            <ul>
+                <li> <a href="table-basic-table.html"><i class="bi bi-circle"></i>Review List</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item @if (request()->is('admin/categories')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.categories.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="disc"></i>
-                <span class="link-title">{{ __('Categories') }}</span>
+        <li class="menu-label">Marketing</li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-award-fill"></i>
+                </div>
+                <div class="menu-title">Coupons</div>
             </a>
+            <ul>
+                <li> <a href="authentication-signin.html" target="_blank"><i class="bi bi-circle"></i>Add Coupon</a>
+                </li>
+                <li> <a href="authentication-signup.html" target="_blank"><i class="bi bi-circle"></i>Coupon List</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item @if (request()->is('admin/product-stock')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.product.stock') }}" class="nav-link">
-                <i class="link-icon" data-feather="layers"></i>
-                <span class="link-title">{{ __('Stock') }}</span>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-collection-play-fill"></i>
+                </div>
+                <div class="menu-title">Sliders</div>
             </a>
+            <ul>
+                <li> <a href="charts-apex-chart.html"><i class="bi bi-circle"></i>Add Slider</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Slider List</a>
+                </li>
+            </ul>
         </li>
-        {{-- <li class="nav-item @if (request()->is('admin/sizes')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.sizes.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="disc"></i>
-                <span class="link-title">{{ __('Size') }}</span>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-collection-play-fill"></i>
+                </div>
+                <div class="menu-title">Trends</div>
             </a>
+            <ul>
+                <li> <a href="charts-apex-chart.html"><i class="bi bi-circle"></i>Add Trends</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Trends List</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Category</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item @if (request()->is('admin/colors')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.colors.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="aperture"></i>
-                <span class="link-title">{{ __('Color') }}</span>
+        <li class="menu-label">Users</li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-lock-fill"></i>
+                </div>
+                <div class="menu-title">Admins</div>
             </a>
-        </li> --}}
-        <li class="nav-item nav-category">{{ __('Service Part') }}</li>
-        <li class="nav-item @if (request()->is('admin/orders')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.orders.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="codepen"></i>
-                @if( neworder() >0 )
-                <span class="notification">{{ neworder() }}</span>
-                @endif
-                <span class="link-title">{{ __('Orders') }}</span>
-            </a>
+            <ul>
+                <li> <a href="authentication-signin.html" target="_blank"><i class="bi bi-circle"></i>Add Admin</a>
+                </li>
+                <li> <a href="authentication-signup.html" target="_blank"><i class="bi bi-circle"></i>Admin List</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item @if (request()->is('admin/product-request')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.requestproduct.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="codepen"></i>
-                @if( newrequest() > 0 )
-                <span class="notification">{{ newrequest() }}</span>
-                @endif
-
-                <span class="link-title">{{ __('Requested') }} </span>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-people-fill"></i>
+                </div>
+                <div class="menu-title">Customers</div>
             </a>
-        </li>
-        <li class="nav-item @if (request()->is('admin/sale-report')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.report.salesearch') }}" class="nav-link">
-                <i class="link-icon" data-feather="file"></i>
-
-                <span class="link-title">{{ __('Sale Report') }} </span>
-            </a>
-        </li>
-
-        <li class="nav-item nav-category">{{ __('Marketing Part') }}</li>
-        <li class="nav-item @if (request()->is('admin/coupons')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.coupons.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="aperture"></i>
-                <span class="link-title">{{ __('Coupons') }}</span>
-            </a>
-        </li>
-        <li class="nav-item nav-category">{{ __('General Part') }}</li>
-
-        <li class="nav-item @if (request()->is('admin/generals')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.generals.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="info"></i>
-                <span class="link-title">{{ __('General') }}</span>
-            </a>
-        </li>
-        <li class="nav-item @if (request()->is('admin/faqs')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.faqs.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="help-circle"></i>
-                <span class="link-title">{{ __('FAQ') }}</span>
-            </a>
-        </li>
-        <li class="nav-item @if (request()->is('admin/sliders')) {{ 'active' }} @endif">
-            <a href="{{ route('admin.sliders.index') }}" class="nav-link">
-                <i class="link-icon" data-feather="image"></i>
-                <span class="link-title">{{ __('Slider') }}</span>
-            </a>
+            <ul>
+                <li> <a href="authentication-signin.html" target="_blank"><i class="bi bi-circle"></i>Add
+                        Customer</a>
+                </li>
+                <li> <a href="authentication-signup.html" target="_blank"><i class="bi bi-circle"></i>Customer
+                        List</a>
+                </li>
+            </ul>
         </li>
 
-        <li class="nav-item @if (request()->is('admin/pages') || request()->is('admin/pages/*')) {{ 'active' }} @endif">
-            <a class="nav-link" data-toggle="collapse" href="#pageControl" role="button" aria-expanded="false"
-                aria-controls="pageControl">
-                <i class="link-icon" data-feather="file-text"></i>
-                <span class="link-title">{{ __('Pages') }}</span>
-                <i class="link-arrow" data-feather="chevron-down"></i>
+        <li class="menu-label">Reports</li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-bar-chart-line-fill"></i>
+                </div>
+                <div class="menu-title">Reports</div>
             </a>
-            <div class="collapse @if (request()->is('admin/pages') || request()->is('admin/pages/*')) {{ 'show' }} @endif" id="pageControl">
-                <ul class="nav sub-menu">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.pages.create') }}"
-                            class="nav-link {{ Request::is('admin/pages/create') ? 'active' : '' }}">{{ __('New Page') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.pages.index') }}"
-                            class="nav-link {{ Request::is('admin/pages') ? 'active' : '' }}">{{ __('All Page') }}</a>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li> <a href="charts-apex-chart.html"><i class="bi bi-circle"></i>Customers</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Orders</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Stcoks</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-label">Settings</li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-music-note-list"></i>
+                </div>
+                <div class="menu-title">Settings</div>
+            </a>
+            <ul>
+                <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Payment Methods</a>
+                    <ul>
+                        <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Add Method</a>
+                        </li>
+                        <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Method List</a>
+                        </li>
+                    </ul>
+                </li>
+                <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Branches</a>
+                    <ul>
+                        <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Add Branch</a>
+                        </li>
+                        <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Banch List</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </li>
     </ul>
-</div>
+</aside>

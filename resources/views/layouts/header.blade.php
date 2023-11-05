@@ -16,7 +16,7 @@
                         <li><a data-bs-toggle="offcanvas" href="#offcanvasCart" role="button"
                                 aria-controls="offcanvasCart"><i class="ti ti-shopping-cart"></i></a></li>
                         <li><a href="{{ route('wishlist') }}"><i class="ti ti-heart"></i></a></li>
-                        <li><a href="{{ route('user-login') }}"><i class="ti ti-user"></i></a></li>
+                        <li><a href="{{ route('login') }}"><i class="ti ti-user"></i></a></li>
                         <li><button class="tm-header-searchtrigger"><i class="ti ti-search"></i></button></li>
                     </ul>
                 </div>
@@ -48,8 +48,8 @@
                                     <li><a href={{ route('service') }}>Facials</a></li>
                                     <li><a href={{ route('service') }}>Hair Cut</a></li>
                                     <li><a href={{ route('service') }}>Hair Treatment</a></li>
-                                    <li><a href={{ route('service') }}>Monicure/Pedicure</a></li>
-                                    <li><a href={{ route('service') }}>Eyelash extension</a></li>
+                                    <li><a href={{ route('service') }}>Manicure/Pedicure</a></li>
+                                    <li><a href={{ route('service') }}>Eyelash Extension</a></li>
                                     <li><a href={{ route('service') }}>Hair Color</a></li>
                                     <li><a href="{{ route('service') }}">Straightening Treatment</a>
                                     </li>
@@ -57,7 +57,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Asthetic
+                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Aesthetic
                                     Clinic</a>
                                 <ul>
                                     <li><a href={{ route('service') }}>PRP</a></li>
@@ -84,8 +84,7 @@
                                     <li><a href="{{ route('shop') }}">Henna</a></li>
                                 </ul>
                             </li>
-                            <li class="tm-header-nav-dropdown"><a href="{{ route('shop') }}">Kona
-                                    Cosmetics</a>
+                            <li class="tm-header-nav-dropdown"><a href="{{ route('shop') }}">Kona Cosmetics</a>
                                 <ul>
                                     <li><a href="{{ route('shop') }}">Lipps</a></li>
                                     <li><a href="{{ route('shop') }}">Face</a></li>
@@ -112,7 +111,7 @@
                             <li><a data-bs-toggle="offcanvas" href="#offcanvasCart" role="button"
                                     aria-controls="offcanvasCart"><i class="ti ti-shopping-cart"></i></a></li>
                             <li><a href="{{ route('wishlist') }}"><i class="ti ti-heart"></i></a></li>
-                            <li><a href="{{ route('user-login') }}"><i class="ti ti-user"></i></a></li>
+                            <li><a href="{{ route('login') }}"><i class="ti ti-user"></i></a></li>
                             <li><button class="tm-header-searchtrigger"><i class="ti ti-search"></i></button>
                             </li>
                         </ul>
