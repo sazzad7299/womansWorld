@@ -48,8 +48,8 @@
                                     <li><a href={{ route('service') }}>Facials</a></li>
                                     <li><a href={{ route('service') }}>Hair Cut</a></li>
                                     <li><a href={{ route('service') }}>Hair Treatment</a></li>
-                                    <li><a href={{ route('service') }}>Monicure/Pedicure</a></li>
-                                    <li><a href={{ route('service') }}>Eyelash extension</a></li>
+                                    <li><a href={{ route('service') }}>Manicure/Pedicure</a></li>
+                                    <li><a href={{ route('service') }}>Eyelash Extension</a></li>
                                     <li><a href={{ route('service') }}>Hair Color</a></li>
                                     <li><a href="{{ route('service') }}">Straightening Treatment</a>
                                     </li>
@@ -57,7 +57,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Asthetic
+                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Aesthetic
                                     Clinic</a>
                                 <ul>
                                     <li><a href={{ route('service') }}>PRP</a></li>

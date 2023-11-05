@@ -48,13 +48,11 @@
                 <div class="menu-title">Services</div>
             </a>
             <ul>
-                <li> <a href="widgets-static-widgets.html"><i class="bi bi-circle"></i>Add Service</a>
+                <li class="@if (request()->is('admin/services/create')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.services.create')}}"><i class="bi bi-circle"></i>Add Service</a>
                 </li>
-                <li> <a href="widgets-data-widgets.html"><i class="bi bi-circle"></i>Service List</a>
+                <li class="@if (request()->is('admin/services/index')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.services.index')}}"><i class="bi bi-circle"></i>Service List</a>
                 </li>
-                <li> <a href="widgets-static-widgets.html"><i class="bi bi-circle"></i>Add Category</a>
-                </li>
-                <li> <a href="widgets-data-widgets.html"><i class="bi bi-circle"></i>Category List</a>
+                <li class="@if (request()->is('admin/services/index')) {{ 'mm-active' }} @endif"> <a href="{{route('admin.service-category.index')}}"><i class="bi bi-circle"></i>Category</a>
                 </li>
             </ul>
         </li>
@@ -105,6 +103,21 @@
                 <li> <a href="charts-apex-chart.html"><i class="bi bi-circle"></i>Add Slider</a>
                 </li>
                 <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Slider List</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bi bi-collection-play-fill"></i>
+                </div>
+                <div class="menu-title">Trends</div>
+            </a>
+            <ul>
+                <li> <a href="charts-apex-chart.html"><i class="bi bi-circle"></i>Add Trends</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Trends List</a>
+                </li>
+                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Category</a>
                 </li>
             </ul>
         </li>

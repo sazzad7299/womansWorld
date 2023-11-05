@@ -10,7 +10,7 @@
 @section('content')
 <div class="card">
     <div class="card-header py-3">
-      <h6 class="mb-0">Add Product Category</h6>
+      <h6 class="mb-0">Add Service Category</h6>
     </div>
     <div class="card-body">
        <div class="row">
@@ -29,9 +29,8 @@
                 <div class="col-12">
                   <label class="form-label">Parent</label>
                   <select class="form-select">
-                    <option>W.W Professional</option>
-                    <option>W.W Cosmetics</option>
-                    <option>Kona Cosmetics</option>
+                    <option>Salon Service</option>
+                    <option>Aesthetic Clinic</option>
                   </select>
                 </div>
                 <div class="col-12">
@@ -63,7 +62,7 @@
                      </tr>
                    </thead>
                    <tbody>
-                    <x-categories :categories="$categories" :model="'App\Models\Category'" />
+                    <x-categories :categories="$categories" :model="'App\Models\ServiceCategory'" />
                    </tbody>
                  </table>
               </div>

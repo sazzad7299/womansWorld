@@ -1,14 +1,11 @@
-
+@props(['category', 'model'])
  <tr>
     <td @if($category->isChild())
         class="ml-16"
         @endif >{{ $category->id }}</td>
     <td>{{ $category->name }}</td>
     <td>{{ $category->slug }}</td>
-    <td>{{ $parent_category  = $category->isChild() ?  App\Models\Category::hello($category->parent_id) : 'Main Category'  }}</td>
-    {{-- <td class="py-1">
-        <img src="{{ asset($category->logo) }}" alt="image">
-    </td> --}}
+    <td>{{ $parent_category  = $category->isChild() ?  $model::hello($category->parent_id) : 'Main Category'  }}</td>
     <td>{{ $category->status =='1' ? 'Active':'Inactive' }}</td>
     <td>
         <a href="" class="btn btn-sm btn-outline-primary"
@@ -30,4 +27,4 @@
         </form>
     </td>
 </tr>
-<x-categories :categories="$category->children" />
+<x-categories :categories="$category->children" :model="$model" />
