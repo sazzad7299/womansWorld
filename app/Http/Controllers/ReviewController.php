@@ -15,7 +15,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::query()->with('product:id,name,status','user:id,name')->paginate(2);
+        // return $reviews;
+        return view('backend.admin.review',compact('reviews'));
     }
 
     /**

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Service;
+use App\Models\Branch;
 use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Models\ServiceCategory;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBranchRequest;
+use App\Http\Requests\UpdateBranchRequest;
 
-class ServiceController extends Controller
+class BranchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.services.index');
+        $branchs = Branch::query()->paginate(10);
+        return view('backend.admin.branch.index',compact('branchs'));
     }
 
     /**
@@ -27,18 +28,18 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $categories = Category::with('children')->where('type',2)->whereNull('parent_id')->get();
-        $indentedCategories = Category::getIndentedCategories($categories);
-        return view('backend.admin.services.create',compact('indentedCategories'));
+
+
+        return view('backend.admin.branch.add');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreBranchRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBranchRequest $request)
     {
         //
     }
@@ -46,10 +47,10 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Branch $branch)
     {
         //
     }
@@ -57,10 +58,10 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Branch $branch)
     {
         //
     }
@@ -68,11 +69,11 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\UpdateBranchRequest  $request
+     * @param  \App\Models\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateBranchRequest $request, Branch $branch)
     {
         //
     }
@@ -80,10 +81,10 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Branch $branch)
     {
         //
     }

@@ -30,14 +30,10 @@ class ProductController extends Controller
     public function create()
     {
         $sizes = Size::orderBy('name', 'asc')->get(['id', 'name']);
-        $colors = Color::orderBy('name', 'asc')->get(['id', 'name']);
-        // $categories = $categories = Category::tree();
-        $categories = Category::with('children')->whereNull('parent_id')->get();
-
-        $indentedCategories = Category::getIndentedCategories($categories);
-
         $brands = Brand::orderBy('name', 'asc')->get(['id', 'name']);
-        return view('backend.admin.products.create', compact('sizes', 'colors', 'indentedCategories', 'brands'));
+        $categories = Category::with('children')->where('type',1)->whereNull('parent_id')->get();
+        $indentedCategories = Category::getIndentedCategories($categories);
+        return view('backend.admin.products.create', compact('sizes', 'indentedCategories', 'brands'));
     }
 
     public function store(ProductRequest $request)

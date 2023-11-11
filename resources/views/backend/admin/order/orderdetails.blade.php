@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-label" for="discount_type">{{ __('Delivery  Status') }}</label>
-                                        <select name="delivery_status" id="delivery" data-id="{{ $order->id }}">
+                                        <select name="delivery_status" id="delivery" data-id="{{ $order->id }}" class="form-control">
                                             <option value="0"{{ $order->delivery_status == 0 ? ' selected' : '' }}>
                                                 Pending</option>
                                             <option value="1"{{ $order->delivery_status == 1 ? ' selected' : '' }}>
@@ -312,15 +312,14 @@
             newWin.document.open();
 
             newWin.document.write(
-                '<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Invoice</title><link rel="stylesheet" href="{{ asset('public/backend/assets/plugins/core/core.css') }}"><link rel="stylesheet" href="{{ asset('public/backend/assets/css/demo_1/style.css') }}"></head><body onload="window.print()">'
+                '<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Invoice</title><link rel="stylesheet" href="{{ asset('/backend/assets/css/core.css') }}"><link rel="stylesheet" href="{{ asset('/css/style.css') }}"></head><body onload="window.print()">'
             );
             newWin.document.write(contents);
             newWin.document.write('</body></html>');
-
             newWin.document.close();
             setTimeout(function() {
                 newWin.close();
-            }, 10);
+            }, 5000);
         });
     </script>
 @endpush
