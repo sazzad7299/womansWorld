@@ -42,11 +42,7 @@ Route::get('product-details', function () {
 })->name('product-details');
 Route::get('my-account', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::group(['middleware' => ['auth','guest']], function () {
-    Route::get('login-register', function () {
-        return view('auth.login');
-    })->name('login');
-});
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::view('profile', 'backend.profile')->name('profile');

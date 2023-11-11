@@ -93,9 +93,7 @@
                 <div class="menu-title">Sliders</div>
             </a>
             <ul>
-                <li> <a href="{{route('admin.sliders.index')}}"><i class="bi bi-circle"></i>Add Slider</a>
-                </li>
-                <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Slider List</a>
+                <li> <a href="{{route('admin.sliders.index')}}"><i class="bi bi-circle"></i>Slider List</a>
                 </li>
             </ul>
         </li>
@@ -162,14 +160,14 @@
                 <div class="menu-title">Settings</div>
             </a>
             <ul>
-                <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Payment Methods</a>
+                {{-- <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Payment Methods</a>
                     <ul>
                         <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Add Method</a>
                         </li>
                         <li> <a href="charts-chartjs.html"><i class="bi bi-circle"></i>Method List</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Branches</a>
                     <ul>
                         <li> <a href="{{route('admin.branchs.create')}}"><i class="bi bi-circle"></i>Add Branch</a>
