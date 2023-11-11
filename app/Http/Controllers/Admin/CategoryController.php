@@ -18,7 +18,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::tree();
-        // return $categories;
         return view('backend.admin.category', compact('categories'));
     }
 

@@ -1,17 +1,21 @@
 @props(['category', 'model'])
  <tr>
-    <td @if($category->isChild())
-        class="ml-16"
-        @endif >{{ $category->id }}</td>
     <td>{{ $category->name }}</td>
     <td>{{ $category->slug }}</td>
     <td>{{ $parent_category  = $category->isChild() ?  $model::hello($category->parent_id) : 'Main Category'  }}</td>
     <td>{{ $category->status =='1' ? 'Active':'Inactive' }}</td>
+    <td>@if ($category->type == 1)
+         Product
+         @elseif($category->type == 2)
+          Service
+          @else
+          Blog
+        @endif</td>
     <td>
         <a href="" class="btn btn-sm btn-outline-primary"
-            data-bs-toggle="modal" data-target="#edit" data-bs-toggle="tooltip"
+            data-bs-toggle="modal" data-bs-target="#edit" data-bs-toggle="tooltip"
             data-placement="top" title="Edit" data-id="{{ $category->id }}"
-            data-slug="{{ $category->slug }}" data-name="{{ $category->name }}"
+            data-slug="{{ $category->slug }}" data-type="{{ $category->type }}" data-name="{{ $category->name }}"
             data-categoryid="{{ $category->parent_id }}" data-categoryname="{{ $category->isChild() ? $parent_category :'' }}" data-categorylogo="{{$category->logo}}"><i
                 class="bi bi-pencil-fill"></i></a>
 

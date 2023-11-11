@@ -1,13 +1,17 @@
 <?php
 
+use App\Models\Blog;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\WebInfoController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\PayOptionController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SizeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\OrderController;
@@ -42,6 +46,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => ['admin', 
     Route::resource('users', UserController::class)->except(['show']);
     Route::resource('products', ProductController::class);
     Route::resource('services', ServiceController::class);
+    Route::resource('branchs', BranchController::class);
     Route::resource('service-category', ServiceCategoryController::class);
     Route::resource('orders', OrderController::class);
     Route::resource('requestproduct', ProductRequestController::class);
@@ -56,13 +61,13 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => ['admin', 
     Route::resource('sub-categories', SubCategoryController::class)->except(['show']);
     Route::resource('child-categories', ChildCategoryController::class)->except(['show']);
     Route::get('product-stock',[StockManagement::class,'index'])->name('product.stock');
-
+    Route::get('review/list',[ReviewController::class,'index'])->name('reviews.list');
     //Sale Report
     Route::get('sale-report-search',[OrderController::class,'saleReportSearch'])->name('report.salesearch');
 
     Route::get('sale-report',[OrderController::class,'salereport'])->name('report.sale');
 
-
+    Route::resource('blog', BlogController::class)->except(['show']);;
     //Website management
     Route::resource('payoptions',PayOptionController::class)->except('show');
     Route::resource('shippingoption',ShippingOptionController::class)->except('show');

@@ -2,71 +2,66 @@
 
 @section('title', 'All Coupons')
 @section('content')
-    <div class="page-content">
-        <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        @include('includes.error')
-                        <div class="d-flex justify-content-between">
-                            <h6 class="card-title">{{ __('All Coupons') }}</h6>
-                            <a class="btn btn-outline-primary text-end" data-toggle="modal" data-target="#create"
-                                href="">{{ __('New Coupon') }}</a>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-stripe">
-                                <thead>
-                                    <th>SL.</th>
-                                    <th>Title</th>
-                                    <th>Code</th>
-                                    <th>Amount</th>
-                                    <th>Expire Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                    @forelse ($coupons as $item)
-                                        <tr>
-                                            <td>{{ serialNumber($coupons, $loop) }}</td>
-                                            <td>{{ $item->title }}</td>
-                                            <td>{{ $item->code }}</td>
-                                            <td>{{ $item->amount }} {{ $item->amount_type == 1 ? 'TK' : '%' }}</td>
-                                            <td>{{ date('d M, Y', strtotime($item->expires_at)) }}</td>
-                                            <td>{{ $item->status == 1 ? 'Active' : 'Inactive' }}</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-outline-primary editcoupon" data-toggle="modal"
-                                                    data-target="#edit" data-id="{{ $item->id }}"><i
-                                                        data-feather="edit"></i></a>
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                @include('includes.error')
+                <div class="d-flex justify-content-between">
+                    <h6 class="card-title">{{ __('All Coupons') }}</h6>
+                    <a class="btn btn-outline-primary text-end" data-bs-toggle="modal" data-bs-target="#create"
+                        href="">{{ __('New Coupon') }}</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-stripe">
+                        <thead>
+                            <th>SL.</th>
+                            <th>Title</th>
+                            <th>Code</th>
+                            <th>Amount</th>
+                            <th>Expire Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            @forelse ($coupons as $item)
+                                <tr>
+                                    <td>{{ serialNumber($coupons, $loop) }}</td>
+                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->code }}</td>
+                                    <td>{{ $item->amount }} {{ $item->amount_type == 1 ? 'TK' : '%' }}</td>
+                                    <td>{{ date('d M, Y', strtotime($item->expires_at)) }}</td>
+                                    <td>{{ $item->status == 1 ? 'Active' : 'Inactive' }}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-outline-primary editcoupon" data-bs-toggle="modal"
+                                            data-bs-target="#edit" data-id="{{ $item->id }}"><i class="bi bi-pencil-fill"></i></a>
 
-                                                <a href="" class="btn btn-sm btn-outline-danger"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
-                                                    onclick="if(confirm('Are You Sure To Delete?')){ event.preventDefault(); getElementById('delete-form-{{ $item->id }}').submit(); } else { event.preventDefault(); }"><i
-                                                        data-feather="x-square"></i></a>
-                                                <form action="{{ route('admin.coupons.destroy', [$item->id]) }}"
-                                                    method="post" style="display: none;"
-                                                    id="delete-form-{{ $item->id }}">
-                                                    @csrf
-                                                    {{ method_field('DELETE') }}
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="5">No Coupon Founds</td>
-                                        </tr>
-                                    @endforelse
+                                        <a href="" class="btn btn-sm btn-outline-danger" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Delete"
+                                            onclick="if(confirm('Are You Sure To Delete?')){ event.preventDefault(); getElementById('delete-form-{{ $item->id }}').submit(); } else { event.preventDefault(); }"><i
+                                                class="bi bi-trash-fill"></i></a>
+                                        <form action="{{ route('admin.coupons.destroy', [$item->id]) }}" method="post"
+                                            style="display: none;" id="delete-form-{{ $item->id }}">
+                                            @csrf
+                                            {{ method_field('DELETE') }}
+                                        </form>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5">No Coupon Founds</td>
+                                </tr>
+                            @endforelse
 
-                                </tbody>
-                            </table>
-                            <div class="d-flex justify-content-center">
-                                {{ $coupons->links() }}
-                            </div>
-                        </div>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        {{ $coupons->links() }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="modal fade bd-example-modal-xl" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true"
         id="create">
         <div class="modal-dialog modal-xl">
@@ -74,7 +69,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title h4" id="myExtraLargeModalLabel">{{ __('New Coupon') }}
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -163,7 +158,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title h4" id="myExtraLargeModalLabel">{{ __('Edit Coupon') }}
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="btn btn" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

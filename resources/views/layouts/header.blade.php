@@ -57,8 +57,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Aesthetic
-                                    Clinic</a>
+                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Aesthetic Clinic</a>
                                 <ul>
                                     <li><a href={{ route('service') }}>PRP</a></li>
                                     <li><a href="{{ route('service') }}">TCA</a></li>
