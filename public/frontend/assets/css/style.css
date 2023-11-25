@@ -2993,6 +2993,7 @@ button.tm-videobutton:hover {
     font-family: cursive;
     font-size: 16px;
     text-decoration: none;
+    font-family: "PT Serif", serif;
 }
 
 .tm-header-nav ul li.current>a,

@@ -49,7 +49,7 @@
 
     @include('layouts.header')
 
-    @if (request()->url() != "http://singlevendor.test")
+    @if (request()->url() != "https://new.womansworldbd.com/")
     <x-breadcrumb></x-breadcrumb>
     @endif
 

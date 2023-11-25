@@ -9,25 +9,28 @@
             <div class="row">
 
                 <div class="col-lg-6">
-                    <form action="{{route('login')}}" class="tm-form tm-login-form" method="post">
+                    @include('includes.error')
+                    <form class="forms-sample" method="POST" class="tm-form tm-login-form">
                         @csrf
-                        @method('POST')
                         <h4>Login</h4>
                         <div class="tm-form-inner">
                             <div class="tm-form-field">
                                 <label for="login-email">Username or email address*</label>
-                                <input type="email" id="login-email" name="email" required="required">
+                                <input type="email" placeholder="{{ __('E-mail Address') }}" name="email"
+                                value="{{ old('email') }}">
                             </div>
                             <div class="tm-form-field">
                                 <label for="login-password">Password*</label>
-                                <input type="password" id="login-password" name="password" required="required">
+                                <input type="password" class="form-control" id="userPassword"
+                                placeholder="{{ __('Password') }}" name="password">
                             </div>
                             <div class="tm-form-field">
                                 <input type="checkbox" name="login-remember" id="login-remember">
-                                <label for="login-remember">Remember Me</label>
+                                <label for="login-remember">{{ __('Remember me') }}</label>
                             </div>
                             <div class="tm-form-field">
-                                <button type="submit" class="tm-button">Login</button>
+                                <button type="submit"
+                                class="tm-button mb-2 mb-md-0">{{ __('Login') }}</button>
                             </div>
                             <div class="tm-form-field">
                                 <a href="#">Forgot your password?</a>

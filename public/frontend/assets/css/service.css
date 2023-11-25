@@ -76,6 +76,9 @@
         margin-top: 10em;
     }
   }
+  .item-image .slick-slider .slick-arrow{
+      z-index:100!important;
+  }
   .item-image{
     cursor:pointer;
         position:relative;
@@ -123,9 +126,9 @@
                 width:100%;
                 height:100%;
             }
-            & img {
+            &>img {
                 position: relative;
-            overflow: hidden;
+                overflow: hidden;
                 transform: scale(1.4); /* Increase the scale to zoom in (adjust as needed) */
               }
         }
