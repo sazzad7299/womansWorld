@@ -252,14 +252,13 @@
                                                 class="ti ti-eye"></i></button></li>
                                     {{-- <li><a href="#"><i class="ti ti-shopping-cart"></i></a></li> --}}
                                     <li><a href="#"><i class="ti ti-heart"></i></a></li>
-
                                 </ul>
                                 <ul class="tm-product-addToCart">
                                     <li><a href="{{route('addToCart',$product->id)}}" class="widget-pricefilter-button">Add to Cart <i class="ti ti-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="tm-product-bottomside text-center">
-                                <h6 class="tm-product-title"><a href="{{route("product-details")}}">{{$product->name}}</a></h6>
+                                <h6 class="tm-product-title"><a href="{{ route('product-details', ['slug' => $product->slug]) }}">{{$product->name}}</a></h6>
                                 <span class="tm-product-price">@if($product->discout > 0)<del><span class="currency_symbol">৳</span> {{$product->discount}}</del> @endif <span class="currency_symbol">৳</span> 99.99</span>
                                 <div class="tm-ratingbox">
                                     <span class="is-active"><i class="ti ti-star"></i></span>

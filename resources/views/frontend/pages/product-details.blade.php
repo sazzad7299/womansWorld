@@ -13,7 +13,7 @@
                             <div class="tm-prodetails-largeimages">
                                 <div class="tm-prodetails-largeimage">
                                     <a data-fancybox="tm-prodetails-imagegallery"
-                                        href="{{ asset('/public/frontend/assets/images/products/product-image-1.jpg') }}"
+                                        href="{{ asset($product->display) }}"
                                         data-caption="Product Zoom Image 1">
                                         <img src="{{ asset('/public/frontend/assets/images/products/product-image-1.jpg') }}"
                                             alt="product image">
@@ -90,7 +90,7 @@
 
                     <div class="col-xl-7 col-lg-6 col-md-6 col-12">
                         <div class="tm-prodetails-content">
-                            <h4 class="tm-prodetails-title">Cosmetic compact powder</h4>
+                            <h4 class="tm-prodetails-title">{{$product->name}}</h4>
                             <div class="tm-ratingbox">
                                 <span class="is-active"><i class="ti ti-star"></i></span>
                                 <span class="is-active"><i class="ti ti-star"></i></span>
@@ -246,39 +246,10 @@
                 <h4 class="small-title">Similliar Products</h4>
                 <div class="row mt-30-reverse">
                     <!-- Single Product -->
-                    @foreach ($products as $product)
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-12 mt-30">
-                            <div class="tm-product tm-scrollanim">
-                                <div class="tm-product-topside">
-                                    <img src="{{ asset($product->display) }}" alt="product image">
-                                    <ul class="tm-product-actions">
-                                        <li><button data-fancybox data-src="#tm-product-quickview"><i
-                                                    class="ti ti-eye"></i></button></li>
-                                        {{-- <li><a href="#"><i class="ti ti-shopping-cart"></i></a></li> --}}
-                                        <li><a href="#"><i class="ti ti-heart"></i></a></li>
-
-                                    </ul>
-                                    <ul class="tm-product-addToCart">
-                                        <li><a href="{{ route('cart') }}" class="widget-pricefilter-button">Add to Cart
-                                                <i class="ti ti-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="tm-product-bottomside text-center">
-                                    <h6 class="tm-product-title"><a href="{{ route('product-details') }}">Cosmetic
-                                            plastic compact
-                                            powder</a></h6>
-                                    <span class="tm-product-price"><del><span class="currency_symbol">৳</span>
-                                            109.50</del> <span class="currency_symbol">৳</span> 99.99</span>
-                                    <div class="tm-ratingbox">
-                                        <span class="is-active"><i class="ti ti-star"></i></span>
-                                        <span class="is-active"><i class="ti ti-star"></i></span>
-                                        <span class="is-active"><i class="ti ti-star"></i></span>
-                                        <span class="is-active"><i class="ti ti-star"></i></span>
-                                        <span><i class="ti ti-star"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    @foreach ($relatedProduct as $product)
+                    <x-product>
+                        @slot('product', $product)
+                    </x-product>
                     @endforeach
                     <!--// Single Product -->
                 </div>

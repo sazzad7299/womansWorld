@@ -72,3 +72,4 @@ class ProductController extends Controller
         return back();
     }
 }
+

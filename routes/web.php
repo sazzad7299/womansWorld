@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Product;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -32,17 +32,10 @@ Route::get('my-account', function () {
     return view('frontend.pages.my-account');
 })->name('my-account');
 
-Route::get('shop', function () {
-    $products = Product::all();
-    return view('frontend.pages.shop',compact('products'));
-})->name('shop');
-Route::get('product-details', function () {
-    $products = Product::all();
-    return view('frontend.pages.product-details',compact('products'));
-})->name('product-details');
+Route::get('shop',[ProductController::class,'shop'])->name('shop');
 Route::get('my-account', [DashboardController::class, 'index'])->name('dashboard');
 
-
+Route::get('/product/{slug}', [ProductController::class, 'product'])->name('product-details');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::view('profile', 'backend.profile')->name('profile');
@@ -53,4 +46,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('cart/remove/{rowId}',[CartController::class,'delete'])->name('cart.remove');
 require __DIR__.'/auth.php';
-Route::get('/product/{slug}', [ProductController::class,'product']);
+// Route::get('/product/{slug}', [ProductController::class,'product']);
