@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 22, 2023 at 06:40 PM
+-- Generation Time: Nov 30, 2023 at 06:06 PM
 -- Server version: 5.7.36
 -- PHP Version: 8.1.0
 
@@ -20,6 +20,42 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogs`
+--
+
+DROP TABLE IF EXISTS `blogs`;
+CREATE TABLE IF NOT EXISTS `blogs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `blogs_category_id_foreign` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `branches`
+--
+
+DROP TABLE IF EXISTS `branches`;
+CREATE TABLE IF NOT EXISTS `branches` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -62,24 +98,51 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '0=inactive,1=active',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `categories_parent_id_index` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `slug`, `parent_id`, `logo`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'impedit', 'impedit', NULL, 'public/images/categories/vFgJPBVfbPUMpVmurnxcRa8Pl3n37ElMjm03zu7j.jpg', 1, '2023-04-02 01:13:40', '2023-09-27 14:28:48'),
-(2, 'animi', 'name', NULL, 'public/images/categories/nM4gOiQsXFbmFkjUNpGRgACkwGaOM7bdoGfakPel.jpg', 0, '2023-04-02 01:13:40', '2023-04-02 01:13:40'),
-(3, 'atque', 'name', 1, 'public/images/categories/TfGDBFaQloZrkdMvSgT90qSiYqwxzYI1rwAvb0U9.jpg', 1, '2023-04-02 01:13:40', '2023-09-27 13:35:28'),
-(4, 'voluptas', 'name', NULL, 'public/images/categories/pWMPq40INubbhuQntxpZ4jC1fnLdln0pqrAj3nCW.jpg', 0, '2023-04-02 01:13:40', '2023-04-02 01:13:40'),
-(5, 'repellendus', 'name', 1, 'public/images/categories/AynNSi0hTbRa5K5jd9uSw0Cln3NBsqRvfBwH0CqS.jpg', 0, '2023-04-02 01:13:40', '2023-04-02 01:13:40'),
-(6, 'qui', 'name', 1, 'public/images/categories/pOaAk8sXcmHs4yDxF1TOxm8d25a273vmVRljorDv.jpg', 1, '2023-04-02 01:13:40', '2023-04-02 01:13:40');
+INSERT INTO `categories` (`id`, `name`, `slug`, `parent_id`, `logo`, `type`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'W.W Professional', 'w-w-professional', NULL, 'public/images/categories/2023102315163420230327103948halal.jpeg', 1, 1, '2023-10-23 09:16:34', '2023-10-23 09:16:34'),
+(2, 'Hare Care', 'hare-care', 1, NULL, 1, 1, '2023-10-23 09:17:21', '2023-10-23 09:17:21'),
+(3, 'Skin Care', 'skin-care', 1, NULL, 1, 1, '2023-10-23 09:17:36', '2023-10-23 09:17:36'),
+(4, 'Body Care', 'body-care', 1, NULL, 1, 1, '2023-10-23 09:17:47', '2023-10-23 09:17:47'),
+(5, 'W.W Cosmetics', 'w-w-cosmetics', NULL, 'public/images/categories/2023102315181120230327104027brand1.png', 1, 1, '2023-10-23 09:18:11', '2023-10-23 09:18:11'),
+(6, 'Face Mask', 'face-mask', 5, NULL, 1, 1, '2023-10-23 09:19:05', '2023-10-23 09:19:05'),
+(7, 'Henna', 'henna', 5, NULL, 1, 1, '2023-10-23 09:19:31', '2023-10-23 09:19:31'),
+(8, 'Kona Cosmetics', 'kona-cosmetics', NULL, 'public/images/categories/2023102315201620230327104027brand1.png', 1, 1, '2023-10-23 09:20:16', '2023-10-23 09:20:16'),
+(9, 'Lipps', 'lipps', 8, NULL, 1, 1, '2023-10-23 09:20:38', '2023-10-23 09:20:38'),
+(10, 'Face', 'face', 8, NULL, 1, 1, '2023-10-23 09:20:51', '2023-10-23 09:20:51'),
+(11, 'Eyes', 'eyes', 8, NULL, 1, 1, '2023-10-23 09:21:03', '2023-10-23 09:21:03'),
+(12, 'Gleam and Glitz', 'gleam-and-glitz', 8, NULL, 1, 1, '2023-10-23 09:21:14', '2023-10-23 09:21:14'),
+(13, 'Collection', 'collection', 8, NULL, 1, 1, '2023-10-23 09:21:30', '2023-10-23 09:21:30'),
+(14, 'Cosmetics Hare Care', 'cosmetics-hare-care', 5, NULL, 1, 1, '2023-10-23 09:21:59', '2023-10-23 09:21:59'),
+(15, 'Tips of The Week', 'tips-of-the-week', NULL, NULL, 3, 1, NULL, NULL),
+(16, 'Look', 'look', NULL, NULL, 3, 1, NULL, NULL),
+(17, 'Salon Service', 'salon-service', NULL, 'public/images/categories/20231111204121author-image-1.png', 2, 1, '2023-11-11 14:41:21', '2023-11-11 14:41:21'),
+(18, 'Facials', 'facials', 17, NULL, 2, 1, '2023-11-11 14:42:08', '2023-11-11 14:42:08'),
+(19, 'Hair Cut', 'hair-cut', 17, NULL, 2, 1, '2023-11-11 14:42:25', '2023-11-11 14:42:25'),
+(20, 'Hair Treatment', 'hair-treatment', 17, NULL, 2, 1, '2023-11-11 14:42:40', '2023-11-11 14:42:40'),
+(21, 'Manicure/Pedicure', 'manicure-pedicure', 17, NULL, 2, 1, '2023-11-11 14:42:53', '2023-11-11 14:42:53'),
+(22, 'Eyelash Extension', 'eyelash-extension', 17, NULL, 2, 1, '2023-11-11 14:44:06', '2023-11-11 14:44:06'),
+(23, 'Hair Color', 'hair-color', 17, NULL, 2, 1, '2023-11-11 14:44:21', '2023-11-11 14:44:21'),
+(24, 'Straightening Treatment', 'straightening-treatment', 17, NULL, 2, 1, '2023-11-11 14:44:35', '2023-11-11 14:44:35'),
+(25, 'Nail Bar', 'nail-bar', 17, NULL, 2, 1, '2023-11-11 14:44:55', '2023-11-11 14:44:55'),
+(26, 'Aesthetic Clinic', 'aesthetic-clinic', NULL, 'public/images/categories/20231111204701author-image-1.png', 2, 1, '2023-11-11 14:47:01', '2023-11-11 14:47:01'),
+(27, 'PRP', 'prp', 26, NULL, 2, 1, '2023-11-11 14:47:27', '2023-11-11 14:47:27'),
+(28, 'TCA', 'tca', 26, NULL, 2, 1, '2023-11-11 14:47:41', '2023-11-11 14:47:41'),
+(29, 'Laser/Mole Tatto Removal', 'laser-mole-tatto-removal', 26, NULL, 2, 1, '2023-11-11 14:48:28', '2023-11-11 14:48:28'),
+(30, 'Fat Reduction', 'fat-reduction', 26, NULL, 2, 1, '2023-11-11 14:48:47', '2023-11-11 14:48:47'),
+(32, 'Semipermanent Makeup', 'semipermanent-makeup', 26, NULL, 2, 1, '2023-11-11 14:50:25', '2023-11-11 14:50:25'),
+(33, 'Fillers/Botox', 'fillers-botox', 26, NULL, 2, 1, '2023-11-11 14:50:41', '2023-11-11 14:50:41');
 
 -- --------------------------------------------------------
 
@@ -228,7 +291,14 @@ CREATE TABLE IF NOT EXISTS `generals` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `generals_name_unique` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `generals`
+--
+
+INSERT INTO `generals` (`id`, `name`, `value`, `created_at`, `updated_at`) VALUES
+(1, 'rewrt', 'ertwe', '2023-11-04 13:37:20', '2023-11-04 13:37:20');
 
 -- --------------------------------------------------------
 
@@ -261,7 +331,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -285,7 +355,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2021_12_19_070923_create_product_photos_table', 1),
 (16, '2021_12_19_071323_create_generals_table', 1),
 (17, '2021_12_19_072323_create_services_table', 1),
-(18, '2021_12_19_073323_create_sliders_table', 1),
 (19, '2021_12_19_074118_create_color_products_table', 1),
 (20, '2023_03_15_041045_create_reviews_table', 1),
 (21, '2023_03_16_062332_create_pay_options_table', 1),
@@ -298,7 +367,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2023_03_30_064656_create_web_infos_table', 1),
 (29, '2023_03_30_103255_create_wishlists_table', 1),
 (30, '2023_04_05_073427_create_jobs_table', 2),
-(31, '2023_05_07_092515_add_new__product_requests_table', 3);
+(31, '2023_05_07_092515_add_new__product_requests_table', 3),
+(32, '2021_12_19_073323_create_sliders_table', 4),
+(33, '2023_11_05_200043_create_service_categories_table', 5),
+(34, '2023_11_09_154710_create_blogs_table', 6),
+(35, '2023_11_11_200044_create_branches_table', 7);
 
 -- --------------------------------------------------------
 
@@ -355,7 +428,8 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\Models\\User', 18),
 (2, 'App\\Models\\User', 19),
 (2, 'App\\Models\\User', 20),
-(2, 'App\\Models\\User', 21);
+(2, 'App\\Models\\User', 21),
+(2, 'App\\Models\\User', 22);
 
 -- --------------------------------------------------------
 
@@ -410,7 +484,7 @@ INSERT INTO `orders` (`id`, `user_id`, `shipping_address`, `billing_info`, `pay_
 (23, 21, '123 Main St<br>Anythana,Anytown,12345', '123 Main St<br>Anythana,Anytown,12345', 1, 4, 1, 0, 2000.00, NULL, 300.00, 'hijibiji', '49916', '01786740107', NULL, '2023-05-06', 1, 0, 0, 140.00, 0, '2023-05-06 07:26:43', '2023-05-07 04:44:33'),
 (24, 21, '123 Main St<br>Anythana,Anytown,12345', '123 Main St<br>Anythana,Anytown,12345', 1, 4, 1, 0, 2000.00, NULL, 300.00, 'hijibiji', '90744', '01786740107', NULL, '2023-05-06', 1, 0, 0, 140.00, 0, '2023-05-06 07:30:25', '2023-05-07 03:52:49'),
 (25, 21, '123 Main St<br>Anythana,Anytown,12345', '123 Main St<br>Anythana,Anytown,12345', 1, 4, 1, 0, 2000.00, NULL, 300.00, 'hijibiji', '22310', '01786740107', NULL, '2023-05-06', 1, 0, 0, 140.00, 0, '2023-05-06 07:34:34', '2023-05-06 22:48:52'),
-(26, 21, '123 Main St<br>Anythana,Anytown,12345', '123 Main St<br>Anythana,Anytown,12345', 1, 4, 1, 1, 2000.00, NULL, 300.00, 'hijibiji', '75476', '01786740107', NULL, '2023-05-07', 1, 0, 0, 140.00, 0, '2023-05-07 04:02:42', '2023-05-07 04:44:11');
+(26, 21, '123 Main St<br>Anythana,Anytown,12345', '123 Main St<br>Anythana,Anytown,12345', 1, 4, 1, 3, 2000.00, NULL, 300.00, 'hijibiji', '75476', '01786740107', NULL, '2023-05-07', 1, 0, 0, 140.00, 0, '2023-05-07 04:02:42', '2023-11-06 12:16:35');
 
 -- --------------------------------------------------------
 
@@ -616,7 +690,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   KEY `products_category_id_foreign` (`category_id`),
   KEY `products_brand_id_foreign` (`brand_id`),
   KEY `products_slug_index` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -629,8 +703,7 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `slug`, `price`
 (64, 2, 12, 'Jerome Barnes', 'Duis quas pariatur', 288.00, 61.00, 1, 1.00, 460, NULL, NULL, NULL, 'Placeat quibusdam e', 1, NULL, 'public/images/products/20231013213940.jpg', '2023-10-13 15:39:40', '2023-10-13 15:39:40'),
 (65, 2, 12, 'Caldwell Suarez', 'Et neque velit et an', 814.00, 105.00, 2, 20.00, 892, 1, 1, 1, 'Voluptas velit ut a', 1, NULL, 'public/images/products/20231013213951.jpg', '2023-10-13 15:39:51', '2023-10-13 15:39:51'),
 (66, 4, 12, 'Glenna Humphrey', 'Voluptas ex eiusmod', 646.00, 854.00, 2, 11.00, 461, 1, 1, 1, 'Quae pariatur Volup', 1, NULL, 'public/images/products/20231013214007.jpg', '2023-10-13 15:40:07', '2023-10-13 15:40:07'),
-(67, 3, 11, 'Jennifer Mcdaniel', 'Voluptatum eius reru', 315.00, 780.00, 2, 31.00, 130, NULL, NULL, 1, 'Excepteur quod perfe', 1, NULL, 'public/images/products/20231013214035.jpg', '2023-10-13 15:40:35', '2023-10-13 15:40:35'),
-(68, 5, 11, 'Stacey Reese', 'Eveniet anim dignis', 284.00, 534.00, 2, 93.00, 668, 1, 1, 1, 'In dolores laboris q', 1, NULL, 'public/images/products/20231013214139.jpg', '2023-10-13 15:41:39', '2023-10-13 15:41:39');
+(67, 3, 11, 'Jennifer Mcdaniel', 'Voluptatum eius reru', 315.00, 780.00, 2, 31.00, 130, NULL, NULL, 1, 'Excepteur quod perfe', 1, NULL, 'public/images/products/20231013214035.jpg', '2023-10-13 15:40:35', '2023-10-13 15:40:35');
 
 -- --------------------------------------------------------
 
@@ -725,7 +798,15 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   PRIMARY KEY (`id`),
   KEY `reviews_user_id_foreign` (`user_id`),
   KEY `reviews_product_id_foreign` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `user_id`, `product_id`, `rating`, `body`, `created_at`, `updated_at`) VALUES
+(3, 21, 65, 5, 'Good Products', NULL, NULL),
+(4, 1, 63, 4, 'Test Review', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -792,6 +873,39 @@ CREATE TABLE IF NOT EXISTS `services` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `service_categories`
+--
+
+DROP TABLE IF EXISTS `service_categories`;
+CREATE TABLE IF NOT EXISTS `service_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '0=inactive,1=active',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `service_categories_parent_id_index` (`parent_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `service_categories`
+--
+
+INSERT INTO `service_categories` (`id`, `name`, `slug`, `parent_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Salon Services', 'salon-services', NULL, 1, NULL, NULL),
+(2, 'Aesthetic Clinic', 'aesthetic-clinic', NULL, 1, NULL, NULL),
+(3, 'Facials', 'facials', 1, 1, NULL, NULL),
+(4, 'Hair Cut', 'hair-cut', 1, 1, NULL, NULL),
+(5, 'Hair Treatment', 'hair-treatment', 1, 1, NULL, NULL),
+(6, 'Manicure/Pedicure', 'manicure/pedicure', 1, 1, NULL, NULL),
+(7, 'Eyelash Extension', 'eyelash-extension', 1, 1, NULL, NULL),
+(8, 'PRP', 'prp', 2, 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `shipping_options`
 --
 
@@ -842,12 +956,22 @@ CREATE TABLE IF NOT EXISTS `sizes` (
 DROP TABLE IF EXISTS `sliders`;
 CREATE TABLE IF NOT EXISTS `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_desc` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(355) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `title`, `short_desc`, `link`, `photo`, `created_at`, `updated_at`) VALUES
+(2, 'A thing of beauty is a joy forever for women', 'The experience of beauty often involves an interpretation of someentity as being in balance.', 'http://singlevendor.test/shop', 'public/images/sliders/20231023171211.jpeg', '2023-10-23 11:12:11', '2023-10-23 11:12:11'),
+(3, 'Commodo molestiae ea', 'Ipsa fugit duis ex', 'In qui inventore sit', 'public/images/sliders/20231023171317.jpeg', '2023-10-23 11:13:17', '2023-10-23 11:13:17');
 
 -- --------------------------------------------------------
 
@@ -871,15 +995,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   UNIQUE KEY `users_phone_unique` (`phone`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `email_verified_at`, `password`, `address`, `photo`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Amos Morar', 'admin@gmail.com', '708745339', '2023-04-02 01:13:39', '$2y$10$YsQbVjCK7CDjsIaXkkzPmOz8JhJ9QMv.lD9nMuVwkRlv.STWo0dy6', NULL, NULL, '5VE5vcEjNIHgBrq7rmzP3LPBcE1bKzYU7ywPdx4Jho8glUQnt5CJLaOF6qNe', '2023-04-02 01:13:40', '2023-04-02 01:13:40'),
-(21, 'Md Sazzadur Rahman', 'sazzadurrahman580@gmail.com', '01786740107', NULL, '$2y$10$YsQbVjCK7CDjsIaXkkzPmOz8JhJ9QMv.lD9nMuVwkRlv.STWo0dy6', 'Dinajpur', 'public/images/users/20230404060652.png', NULL, '2023-04-04 00:06:52', '2023-04-04 00:06:52');
+(1, 'Amos Morar', 'admin@gmail.com', '708745339', '2023-04-02 01:13:39', '$2y$10$YsQbVjCK7CDjsIaXkkzPmOz8JhJ9QMv.lD9nMuVwkRlv.STWo0dy6', NULL, 'public/images/users/20231111212250.png', 'dyc72A1VnUIfjeKPUxglGfdIh0RYtW4kP4l0Huj1bvgxM5PV2ONnip41uak4', '2023-04-02 01:13:40', '2023-11-11 15:22:50'),
+(21, 'Md Sazzadur Rahman', 'sazzadurrahman580@gmail.com', '01786740107', NULL, '$2y$10$YsQbVjCK7CDjsIaXkkzPmOz8JhJ9QMv.lD9nMuVwkRlv.STWo0dy6', 'Dinajpur', 'public/images/users/20230404060652.png', NULL, '2023-04-04 00:06:52', '2023-04-04 00:06:52'),
+(22, 'Maryam Sears', 'myloqigy@mailinator.com', '01247854751', NULL, '$2y$10$laYbqLzMUQrwxoudnGO7/.PrGvkl0/1F3y736fzk3efyD5P.PtZVS', 'Qui ducimus velit q', NULL, NULL, '2023-11-09 14:47:59', '2023-11-09 14:47:59');
 
 -- --------------------------------------------------------
 
@@ -965,6 +1090,12 @@ CREATE TABLE IF NOT EXISTS `wishlists` (
 --
 
 --
+-- Constraints for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD CONSTRAINT `blogs_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL;
+
+--
 -- Constraints for table `categories`
 --
 ALTER TABLE `categories`
@@ -1044,6 +1175,12 @@ ALTER TABLE `reviews`
 ALTER TABLE `role_has_permissions`
   ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `service_categories`
+--
+ALTER TABLE `service_categories`
+  ADD CONSTRAINT `service_categories_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `service_categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_shippings`
