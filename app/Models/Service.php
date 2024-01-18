@@ -2,51 +2,65 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ServicePhoto;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Service extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'phone', 'address', 'product', 'detail', 'photo',
+        'name', 'slug', 'category_id', 'description', 'detail', 'photo',
     ];
 
     public static $validateRule = [
         'name'    => ['required', 'string', 'max: 255'],
-        'phone'   => ['required', 'string', 'max: 15'],
-        'address' => ['required', 'string'],
-        'product' => ['required', 'string', 'max: 255'],
+        'slug'   => ['required', 'string', 'max: 255'],
+        'category_id' => ['required'],
+        'description' => ['nullable'],
         'detail'  => ['required', 'string'],
-        'photo'   => ['nullable', 'max: 1000', 'mimes: jpeg,jpg,png,gif,webp'],
+        'photo'   => ['nullable', 'mimes: jpeg,jpg,png,gif,webp'],
     ];
 
     public function storeService(Object $request)
     {
-        $image = $request->file('photo');
 
-        if ($image) {
-
-            $image_name      = date('YmdHis');
-            $ext             = strtolower($image->getClientOriginalExtension());
-            $image_full_name = $image_name . '.' . $ext;
-            $upload_path     = 'public/images/services/';
-            $image_url       = $upload_path . $image_full_name;
-            $success         = $image->move($upload_path, $image_full_name);
-            $this->photo     = $image_url;
-        }
-
+        try {
+            DB::beginTransaction();
         $this->name    = $request->name;
-        $this->phone   = $request->phone;
-        $this->address = $request->address;
-        $this->product = $request->product;
-        $this->detail  = $request->detail;
-        $storeService  = $this->save();
+        $this->slug   = $request->slug;
+        $this->category_id = $request->category_id;
+        $this->description  = $request->description;
+        $this->save();
+        $service_id = $this->id;
+        if ($files = $request->file('photo')) {
 
-        $storeService
-            ? session()->flash('message', 'New Service Created Successfully!')
-            : session()->flash('message', 'Something Went Wrong!');
+            foreach ($files as $file) {
+
+                $multiple_upload_path = 'public/images/services/';
+                $name = $file->getClientOriginalName();
+                $multiple_image_name = date('YmdHis') . '_' . $name;
+                $file->move($multiple_upload_path, $multiple_image_name);
+
+                $photo_data[] = [
+                    'service_id' => $service_id,
+                    'photo' => $multiple_upload_path . $multiple_image_name,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ];
+            }
+
+            ServicePhoto::insert($photo_data);
+        }
+        DB::commit();
+            session()->flash('success', 'New Service Created Successfully!');
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            session()->flash('error', 'Something Went Wrong!');
+        }
     }
 
     public function destroyService(Int $id)

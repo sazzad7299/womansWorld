@@ -10,6 +10,13 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
+
+    protected $serviceObject;
+
+    public function __construct()
+    {
+        $this->serviceObject = new Service();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +47,8 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->serviceObject->storeService($request);
+       return back();
     }
 
     /**

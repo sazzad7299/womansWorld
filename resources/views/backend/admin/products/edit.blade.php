@@ -8,6 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     @include('includes.error')
+                    @include('includes.message')
                     <div class="d-flex justify-content-between">
                         <h6 class="card-title">{{ __('Edit Product') }}</h6>
                         <a class="btn btn-outline-primary text-end"

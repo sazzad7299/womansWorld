@@ -159,11 +159,6 @@ class Product extends Model
                     $multiple_image_name = date('YmdHis') . '_' . $name;
                     $file->move($multiple_upload_path, $multiple_image_name);
 
-                    //     $productPhoto             = new ProductPhoto();
-                    //     $productPhoto->photo      = $multiple_upload_path . $multiple_image_name;
-                    //     $productPhoto->product_id = $product_id;
-                    //     $productPhoto->save();
-                    // }
                     $photo_data[] = [
                         'product_id' => $product_id,
                         'photo' => $multiple_upload_path . $multiple_image_name,
@@ -177,7 +172,7 @@ class Product extends Model
             DB::commit();
             session()->flash('success', 'New Product Created Successfully!');
 
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             DB::rollBack();
             session()->flash('error', 'Something Went Wrong!');
         }
