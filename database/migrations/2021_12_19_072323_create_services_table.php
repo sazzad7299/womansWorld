@@ -16,11 +16,11 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id('id');
             $table->string('name');
-            $table->string('phone', 15);
-            $table->mediumText('address');
-            $table->string('product');
-            $table->string('detail');
-            $table->string('photo')->nullable();
+            $table->string('slug', 255)->index();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->string('tags')->nullable();
+            $table->tinyInteger('status')->default(1)->comment('0=inactive,1=active,2=pending');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

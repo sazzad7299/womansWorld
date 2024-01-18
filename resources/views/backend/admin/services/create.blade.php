@@ -18,8 +18,9 @@
                 <div class="card">
                     <div class="card-body">
                         @include('includes.error')
-                        <form class="forms-sample" method="get" action="{{ route('admin.services.index') }}"
-                            enctype="multipart/form-data">
+                        @include('includes.message')
+                        <form class="forms-sample" method="POST" action="{{ route('admin.services.store') }}"
+                        enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-9">

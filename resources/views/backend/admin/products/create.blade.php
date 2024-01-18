@@ -18,6 +18,7 @@
                 <div class="card">
                     <div class="card-body">
                         @include('includes.error')
+                        @include('includes.message')
                         <form class="forms-sample" method="POST" action="{{ route('admin.products.store') }}"
                             enctype="multipart/form-data">
                             @csrf
