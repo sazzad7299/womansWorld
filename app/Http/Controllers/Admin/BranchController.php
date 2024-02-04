@@ -15,10 +15,16 @@ class BranchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    protected $branchObject;
+
+    public function __construct()
     {
-        $branchs = Branch::query()->paginate(10);
-        return view('backend.admin.branch.index',compact('branchs'));
+        $this->branchObject = new Branch();
+    }
+     public function index()
+    {
+        $branches = Branch::query()->paginate(10);
+        return view('backend.admin.branch.index',compact('branches'));
     }
 
     /**
@@ -28,8 +34,6 @@ class BranchController extends Controller
      */
     public function create()
     {
-
-
         return view('backend.admin.branch.add');
     }
 
@@ -39,9 +43,10 @@ class BranchController extends Controller
      * @param  \App\Http\Requests\StoreBranchRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBranchRequest $request)
+    public function store(StoreBranchRequest $request, Branch $branch)
     {
-        //
+        $this->branchObject->storeUpdate($request,$branch);
+        return back();
     }
 
     /**
@@ -63,7 +68,7 @@ class BranchController extends Controller
      */
     public function edit(Branch $branch)
     {
-        //
+        return view('backend.admin.branch.edit',compact('branch'));
     }
 
     /**
@@ -75,7 +80,8 @@ class BranchController extends Controller
      */
     public function update(UpdateBranchRequest $request, Branch $branch)
     {
-        //
+        $this->branchObject->updateBranch($request,$branch);
+        return back();
     }
 
     /**
@@ -86,6 +92,7 @@ class BranchController extends Controller
      */
     public function destroy(Branch $branch)
     {
-        //
+        $this->branchObject->destroyBranch($branch);
+        return back();
     }
 }

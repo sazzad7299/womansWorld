@@ -170,9 +170,9 @@
                 </li> --}}
                 <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Branches</a>
                     <ul>
-                        <li> <a href="{{route('admin.branchs.create')}}"><i class="bi bi-circle"></i>Add Branch</a>
+                        <li> <a href="{{route('admin.branches.create')}}"><i class="bi bi-circle"></i>Add Branch</a>
                         </li>
-                        <li> <a href="{{route('admin.branchs.index')}}"><i class="bi bi-circle"></i>Banch List</a>
+                        <li> <a href="{{route('admin.branches.index')}}"><i class="bi bi-circle"></i>Banch List</a>
                         </li>
                     </ul>
                 </li>
