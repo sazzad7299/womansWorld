@@ -51,7 +51,7 @@ class ProductController extends Controller
     {
         $sizes = Size::orderBy('name', 'asc')->get(['id', 'name']);
         $colors = Color::orderBy('name', 'asc')->get(['id', 'name']);
-        $categories = Category::with('children')->whereNull('parent_id')->get();
+        $categories = Category::with('children')->where('type',1)->whereNull('parent_id')->get();
 
         $indentedCategories = Category::getIndentedCategories($categories);
         $brands = Brand::orderBy('name', 'asc')->get();
