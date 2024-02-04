@@ -24,7 +24,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.services.index');
+        $services = Service::query()->with('category:id,name')->paginate(8);
+        return view('backend.admin.services.index',compact('services'));
     }
 
     /**
@@ -68,9 +69,11 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
-        //
+        $categories = Category::with('children')->where('type',2)->whereNull('parent_id')->get();
+        $indentedCategories = Category::getIndentedCategories($categories);
+        return view('backend.admin.services.edit', compact('indentedCategories','service'));
     }
 
     /**
@@ -80,9 +83,10 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Service $service)
     {
-        //
+        $this->serviceObject->UpdateService($request,$service);
+        return back();
     }
 
     /**
@@ -91,8 +95,9 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
-        //
+        $this->serviceObject->destroyService($service);
+        return back();
     }
 }
