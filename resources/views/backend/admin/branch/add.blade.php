@@ -9,7 +9,7 @@
                     <h5>Add Branch</h5>
                 </div>
                 <div class="col-lg-9 col-xl-10">
-                    <a href="{{route('admin.branchs.index')}}" class="btn btn-primary mb-3 mb-lg-0  float-lg-end"><i class="bi bi-file-fill"></i>Branch List</a>
+                    <a href="{{route('admin.branches.index')}}" class="btn btn-primary mb-3 mb-lg-0  float-lg-end"><i class="bi bi-file-fill"></i>Branch List</a>
                 </div>
             </div>
         </div>
@@ -18,9 +18,11 @@
         <div class="card">
             <div class="card-body">
                 @include('includes.error')
+                @include('includes.message')
                 <form class="forms-sample"
-                    enctype="multipart/form-data" action="{{route('admin.branchs.index')}}">
+                    enctype="multipart/form-data" action="{{route('admin.branches.store')}}" method="POST">
                     @csrf
+                    @method('POST')
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-12">
@@ -31,7 +33,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label class="form-label">{{ __('Content') }}</label>
-                                <textarea name="content" value="{{ old('content') }}"  rows="8" class="form-control"></textarea>
+                                <textarea name="content"   rows="8" class="form-control">{{ old('content') }}</textarea>
                             </div>
 
                         </div>

@@ -46,7 +46,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => ['admin', 
     Route::resource('users', UserController::class)->except(['show']);
     Route::resource('products', ProductController::class);
     Route::resource('services', ServiceController::class);
-    Route::resource('branchs', BranchController::class);
+    Route::resource('branches', BranchController::class);
     Route::resource('service-category', ServiceCategoryController::class);
     Route::resource('orders', OrderController::class);
     Route::resource('requestproduct', ProductRequestController::class);

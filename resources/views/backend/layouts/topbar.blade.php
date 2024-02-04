@@ -158,7 +158,7 @@
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="{{ route('admin.branchs.index') }}">
+                                <a href="{{ route('admin.branches.index') }}">
                                     <div class="apps p-2 radius-10 text-center">
                                         <div class="apps-icon-box mb-1 text-white bg-gradient-amour">
                                             <i class="bi bi-book-half"></i>
