@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CategoryRequest extends FormRequest
@@ -34,7 +35,14 @@ class CategoryRequest extends FormRequest
         if ($this->getMethod() == 'POST') {
 
             return $rules + [
-                'name' => 'required|string|max:255|unique:categories,name',
+                'name' => [
+                    'required',
+                    'string',
+                    'max:255',
+                    Rule::unique('categories', 'name')->where(function ($query) {
+                        return $query->where('parent_id', request('parent_id'));
+                    }),
+                ],
                 'slug'    => 'required|string|max:255|unique:categories,slug',
                 'logo'    => 'mimes:jpeg,jpg,png,gif,webp|max:10000|required_if:parent_id,null',
             ];

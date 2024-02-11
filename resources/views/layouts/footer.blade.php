@@ -21,7 +21,7 @@
                         <ul class="single-widget col-md-6 menu d-flex justify-content-around">
                             <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             <li><a href="{{route('shop')}}">Shipping</a></li>
-                            <li><a href="{{route('blog')}}">Order Tracking</a></li>
+                            {{-- <li><a href="{{route('blog')}}">Order Tracking</a></li> --}}
                         </ul>
                     </div>
                 </div>
