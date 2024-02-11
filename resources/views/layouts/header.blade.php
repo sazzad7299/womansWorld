@@ -1,3 +1,4 @@
+@php use App\Models\Category; @endphp
 <div id="tm-home-area" class="tm-header tm-header-sticky">
     <div class="tm-header-toparea">
         <div class="container-fluid">
@@ -42,67 +43,12 @@
                     </div>
 
                     <nav class="tm-header-nav">
+                        <!-- Assuming $categories is the result of the tree function -->
+                        <?php $categories = Category::tree(); ?>
+
                         <ul>
-                            <li class="tm-header-nav-dropdown"><a href="#tm-shop-area">Salon Services</a>
-                                <ul>
-                                    <li><a href={{ route('service') }}>Facials</a></li>
-                                    <li><a href={{ route('service') }}>Hair Cut</a></li>
-                                    <li><a href={{ route('service') }}>Hair Treatment</a></li>
-                                    <li><a href={{ route('service') }}>Manicure/Pedicure</a></li>
-                                    <li><a href={{ route('service') }}>Eyelash Extension</a></li>
-                                    <li><a href={{ route('service') }}>Hair Color</a></li>
-                                    <li><a href="{{ route('service') }}">Straightening Treatment</a>
-                                    </li>
-                                    <li><a href="{{ route('service') }}">Nail Bar</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="tm-header-nav-dropdown"><a href={{ route('service') }}>Aesthetic Clinic</a>
-                                <ul>
-                                    <li><a href={{ route('service') }}>PRP</a></li>
-                                    <li><a href="{{ route('service') }}">TCA</a></li>
-                                    <li><a href="{{ route('service') }}">Laser/Mole Tatto Removal</a></li>
-                                    <li><a href="{{ route('service') }}">Fat Reduction</a>
-                                    </li>
-                                    <li><a href={{ route('service') }}>Semipermanent Makeup</a></li>
-                                    <li><a href={{ route('service') }}>Fillers/Botox</a></li>
-                                </ul>
-                            </li>
-                            <li class="tm-header-nav-dropdown"><a href="{{ route('shop') }}">W.W
-                                    Professional</a>
-                                <ul>
-                                    <li><a href="{{ route('shop') }}">Hare Care</a></li>
-                                    <li><a href="{{ route('shop') }}">Skin Care</a></li>
-                                    <li><a href="{{ route('shop') }}">Body Care</a></li>
-                                </ul>
-                            </li>
-                            <li class="tm-header-nav-dropdown"><a href="{{ route('shop') }}">W.W Cosmetics</a>
-                                <ul>
-                                    <li><a href="{{ route('shop') }}">Hare Care</a></li>
-                                    <li><a href="{{ route('shop') }}">Face Mask</a></li>
-                                    <li><a href="{{ route('shop') }}">Henna</a></li>
-                                </ul>
-                            </li>
-                            <li class="tm-header-nav-dropdown"><a href="{{ route('shop') }}">Kona Cosmetics</a>
-                                <ul>
-                                    <li><a href="{{ route('shop') }}">Lipps</a></li>
-                                    <li><a href="{{ route('shop') }}">Face</a></li>
-                                    <li><a href="{{ route('shop') }}">Eyes</a></li>
-                                    <li><a href="{{ route('shop') }}">Gleam and Glitz</a></li>
-                                    <li><a href="{{ route('shop') }}">Collection</a></li>
-                                </ul>
-                            </li>
-                            <li class="tm-header-nav-dropdown"><a href="{{route('blog')}}">Trend</a>
-                                <ul>
-                                    <li><a href="{{route('blog')}}">Tip of the week</a></li>
-                                    <li><a href="{{route('blog')}}">Look</a></li>
-                                    <li><a href="{{route('blog')}}">Farnaz Alam's</a></li>
-                                </ul>
-                            </li>
-
-                            {{-- <li><a href="{{ route('contact') }}">Contact Us</a></li> --}}
+                            <x-category-menu :categories="$categories" />
                         </ul>
-
                     </nav>
                     <div class="tm-header-sticky-icons d-none">
                         <ul class="tm-header-icons">

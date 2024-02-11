@@ -7,14 +7,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
+use App\Http\Controllers\Frontend\ServiceController;
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('service', function () {
-    return view('frontend.pages.service');
-})->name('service');
-Route::get('blog', function () {
-    return view('frontend.pages.blog');
-})->name('blog');
+Route::get('service/{service}', [ServiceController::class,'getServices'])->name('service');
+Route::get('news/{service}', [ServiceController::class,'getServices'])->name('blog');
 Route::get('contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
@@ -33,6 +30,7 @@ Route::get('my-account', function () {
 })->name('my-account');
 
 Route::get('shop',[ProductController::class,'shop'])->name('shop');
+Route::get('category/{category}',[ProductController::class,'shop'])->name('shop.category');
 Route::get('my-account', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/product/{slug}', [ProductController::class, 'product'])->name('product-details');
